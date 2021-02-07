@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TestElement
 {
-    public class TestElement
+    [Serializable]
+    public class TestElem
     {
         public string Author { get; set; }
         public string Title { get; set; }
