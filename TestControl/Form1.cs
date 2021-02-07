@@ -96,6 +96,17 @@ namespace TestControl
             {
                 if (textBox3.Text.Trim() != "")
                 {
+                    //
+                    foreach (var t in answs)
+                    {
+                        if (t == textBox3.Text.Trim())
+                        {
+                            MessageBox.Show("There are such answer!");
+                            return;
+                        }
+                    }
+                    //
+
                     answs.Add(textBox3.Text.Trim());
 
                     if (checkBox1.Checked)
@@ -105,6 +116,9 @@ namespace TestControl
                         checkBox1.Enabled = false;
 
                         checkBox1.Text = $"IsRight  ({elem.CorectAnswer})";
+
+                        button1.Enabled = true;
+                        button3.Enabled = true;
                     }
 
                     textBox3.Clear();
@@ -154,7 +168,7 @@ namespace TestControl
 
                 n = 0;
 
-                MessageBox.Show($"Question: {testElems[testElems.Count() - 1].Question}\nAnswers: {testElems[testElems.Count() - 1].Answers.Count()}\nCorect Answer:{testElems[testElems.Count() - 1].CorectAnswer}");
+                MessageBox.Show($"Question: {testElems[testElems.Count() - 1].Question}\nNum of answers: {testElems[testElems.Count() - 1].Answers.Count()}\nCorect Answer: {testElems[testElems.Count() - 1].CorectAnswer}");
             }
             else
             {
@@ -176,9 +190,15 @@ namespace TestControl
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            if (testElems.Count() == 0)
+            {
+                MessageBox.Show("You should first add some tests!");
+                return;
+            }
+
             if (textBox5.Text.Trim() == "")
             {
-                textBox5.Text = $"{textBox2.Text.Trim()}__{textBox1.Text.Trim()}";
+                textBox5.Text = $"{textBox2.Text.Trim()}_{textBox1.Text.Trim()}";
             }
 
             if (!Directory.Exists("Tests"))
@@ -226,6 +246,40 @@ namespace TestControl
             answs.Clear();
 
             n = 0;
+        }
+
+        private void ReWriteListBox()
+        {
+            listBox1.Items.Clear();
+            foreach (var t in answs)
+            {
+                listBox1.Items.Add(t);
+            }
+        }
+
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                if (listBox1.SelectedItem.ToString() == elem.CorectAnswer)
+                {
+                    elem.CorectAnswer = null;
+                    checkBox1.Enabled = true;
+                    checkBox1.Text = "IsRight";
+                    button1.Enabled = false;
+                    button3.Enabled = false;
+                }
+
+                answs.Remove(listBox1.SelectedItem.ToString());
+                listBox1.Items.Remove(listBox1.SelectedItem);
+                ReWriteListBox();
+                n--;
+            }
+            else
+            {
+                MessageBox.Show("No selected items!");
+            }
+            
         }
     }
 }
