@@ -69,7 +69,7 @@ namespace TestControl
             {
                 if (textBox4.Text.Trim() != "" && textBox3.Text.Trim() != "")
                 {
-                    elem = new TestElem() { Author = textBox1.Text.Trim(), Title = textBox2.Text.Trim(), Question = textBox4.Text.Trim() };
+                    elem = new TestElem() { Question = textBox4.Text.Trim() };
 
                     answs.Add(textBox3.Text.Trim());
 
@@ -154,7 +154,7 @@ namespace TestControl
 
                 n = 0;
 
-                MessageBox.Show($"Author: {testElems[testElems.Count()-1].Author}\nTitle: {testElems[testElems.Count() - 1].Title}\nQuestion: {testElems[testElems.Count() - 1].Question}\nAnswers: {testElems[testElems.Count() - 1].Answers.Count()}\nCorect Answer:{testElems[testElems.Count() - 1].CorectAnswer}");
+                MessageBox.Show($"Question: {testElems[testElems.Count() - 1].Question}\nAnswers: {testElems[testElems.Count() - 1].Answers.Count()}\nCorect Answer:{testElems[testElems.Count() - 1].CorectAnswer}");
             }
             else
             {
@@ -176,29 +176,56 @@ namespace TestControl
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            if (textBox5.Text.Trim() == "")
+            {
+                textBox5.Text = $"{textBox2.Text.Trim()}__{textBox1.Text.Trim()}";
+            }
 
             if (!Directory.Exists("Tests"))
             {
                 Directory.CreateDirectory("Tests");
             }
 
-            XmlSerializer formatter = new XmlSerializer(typeof(List<TestElem>));
-
-            using (FileStream fs = new FileStream($"Tests/{textBox5.Text}.xml", FileMode.OpenOrCreate))
+            if (File.Exists($"Tests/{textBox5.Text.Trim()}.xml"))
             {
-                formatter.Serialize(fs, testElems);
-
-                MessageBox.Show("Test saved successfuly");
+                MessageBox.Show("There are file with this name");
+                return;
             }
 
+
+            Data data = new Data();
+            data.Author = textBox1.Text.Trim();
+            data.Title = textBox2.Text.Trim();
+            data.Tests = new List<TestElem>();
+            data.Tests.AddRange(testElems);
+
+            XmlSerializer formatter = new XmlSerializer(typeof(Data));
+
+            using (FileStream fs = new FileStream($"Tests/{textBox5.Text.Trim()}.xml", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, data);
+
+                MessageBox.Show($"File {textBox5.Text.Trim()}.xml saved successfuly");
+            }
+
+            label4.Text = "Questions";
+            checkBox1.Text = "IsRight";
+
+            listBox1.Items.Clear();
 
             textBox1.Clear();
             textBox2.Clear();
             textBox4.Clear();
+            textBox5.Clear();
 
             textBox1.Enabled = textBox2.Enabled = true;
 
             checkBox1.Checked = false;
+
+            testElems.Clear();
+            answs.Clear();
+
+            n = 0;
         }
     }
 }
