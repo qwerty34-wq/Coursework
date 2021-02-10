@@ -134,11 +134,6 @@ namespace TestControl
         {
             if (n >= 2 && elem.CorectAnswer != null)
             {
-                //elem.Answers = answs;
-                //foreach (var ans in answs)
-                //{
-                //    elem.Answers.Add(ans);
-                //}
                 elem.Answers = new List<string>();
                 elem.Answers.AddRange(answs);
 
@@ -178,14 +173,7 @@ namespace TestControl
 
         private void ShowInListBox()
         {
-            
             listBox1.Items.Add(answs[answs.Count() - 1]);
-
-            //listBox1.Items.Clear();
-            //foreach (var ans in answs)
-            //{
-            //    listBox1.Items.Add(ans);
-            //}
         }
 
         private void Button3_Click(object sender, EventArgs e)
