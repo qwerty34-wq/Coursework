@@ -10,9 +10,9 @@ namespace DAL
     public class Test
     {
         public int Id { get; set; }
-        [Required, MaxLength(50), MinLength(2)]
+        [Required, MaxLength(50), MinLength(1)]
         public string Author { get; set; }
-        [Required, MaxLength(50), MinLength(2)]
+        [Required, MaxLength(50), MinLength(1)]
         public string Title { get; set; }
         [Required]
         public int NumOfQuestions { get; set; }

@@ -11,7 +11,7 @@ namespace DAL
     public class Group
     {
         public int Id { get; set; }
-        [Required, MaxLength(30), MinLength(2), Index(IsUnique = true)]
+        [Required, MaxLength(50), MinLength(1), Index(IsUnique = true)]
         public string Name { get; set; }
 
         public ICollection<User> Users { get; set; }

@@ -12,9 +12,9 @@ namespace DAL
     {
         public int Id { get; set; }
 
-        [Required, MaxLength(30), MinLength(1)]
+        [Required, MaxLength(50), MinLength(1)]
         public string FName { get; set; }
-        [Required, MaxLength(30), MinLength(1)]
+        [Required, MaxLength(50), MinLength(1)]
         public string LName { get; set; }
         [Required, MaxLength(50), MinLength(1), Index(IsUnique = true)]
         public string Login { get; set; }

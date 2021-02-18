@@ -2,7 +2,7 @@
 
 namespace DAL
 {
-    class MyContextInitializer : DropCreateDatabaseAlways<Context>
+    class MyContextInitializer : CreateDatabaseIfNotExists<Context>
     {
         protected override void Seed(Context context)
         {
@@ -12,6 +12,7 @@ namespace DAL
             admins_group.Users.Add(admin);
 
             context.SaveChanges();
+
         }
     }
 }

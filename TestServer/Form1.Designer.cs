@@ -47,45 +47,54 @@
             this.serverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.DGV_ShowAllGroups = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button_AddGroup = new System.Windows.Forms.Button();
+            this.textBox_AddGroup_Name = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.DGV_AddGroup = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button_UpdateGroup = new System.Windows.Forms.Button();
+            this.textBox_UpdateGroup_NewName = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.DGV_UpdateGroup = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button_AddUserToGroup = new System.Windows.Forms.Button();
+            this.DGV_AddUserToGroup_AllStudents = new System.Windows.Forms.DataGridView();
+            this.DGV_AddUserToGroup_NewGroup = new System.Windows.Forms.DataGridView();
+            this.comboBox_AddUserToGroup = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button_ShowUsersInGroup_RemoveStudent = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBox_ShowUsersInGroup = new System.Windows.Forms.ComboBox();
+            this.DGV_ShowUsersInGroup = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.DGV_ShowUsers = new System.Windows.Forms.DataGridView();
-            this.DGV_AddUsers = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox_FirstName = new System.Windows.Forms.TextBox();
-            this.textBox_LastName = new System.Windows.Forms.TextBox();
-            this.textBox_Login = new System.Windows.Forms.TextBox();
-            this.textBox_Password = new System.Windows.Forms.TextBox();
-            this.textBox_ConfirmPassword = new System.Windows.Forms.TextBox();
-            this.checkBox_IsAdmin = new System.Windows.Forms.CheckBox();
             this.button_AddUser = new System.Windows.Forms.Button();
-            this.DGV_UpdateUsers = new System.Windows.Forms.DataGridView();
+            this.checkBox_IsAdmin = new System.Windows.Forms.CheckBox();
+            this.textBox_ConfirmPassword = new System.Windows.Forms.TextBox();
+            this.textBox_Password = new System.Windows.Forms.TextBox();
+            this.textBox_Login = new System.Windows.Forms.TextBox();
+            this.textBox_LastName = new System.Windows.Forms.TextBox();
+            this.textBox_FirstName = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.DGV_AddUsers = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_Update_User = new System.Windows.Forms.Button();
             this.checkBox_IsAdmin_Upd = new System.Windows.Forms.CheckBox();
@@ -99,85 +108,76 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.DGV_ShowAllGroups = new System.Windows.Forms.DataGridView();
-            this.DGV_AddGroup = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox_AddGroup_Name = new System.Windows.Forms.TextBox();
-            this.button_AddGroup = new System.Windows.Forms.Button();
-            this.DGV_UpdateGroup = new System.Windows.Forms.DataGridView();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button_UpdateGroup = new System.Windows.Forms.Button();
-            this.textBox_UpdateGroup_NewName = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.comboBox_AddUserToGroup = new System.Windows.Forms.ComboBox();
-            this.DGV_AddUserToGroup_NewGroup = new System.Windows.Forms.DataGridView();
-            this.DGV_AddUserToGroup_AllStudents = new System.Windows.Forms.DataGridView();
-            this.button_AddUserToGroup = new System.Windows.Forms.Button();
-            this.DGV_ShowUsersInGroup = new System.Windows.Forms.DataGridView();
-            this.comboBox_ShowUsersInGroup = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.button_ShowUsersInGroup_RemoveStudent = new System.Windows.Forms.Button();
-            this.button_LoadTest_File = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.DGV_UpdateUsers = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBox_LoadTest_Author = new System.Windows.Forms.TextBox();
-            this.textBox_LoadTest_NameOfTest = new System.Windows.Forms.TextBox();
-            this.textBox_LoadTest_NumOfQuestions = new System.Windows.Forms.TextBox();
-            this.numericUpDown_LoadTest_Hour = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_LoadTest_Minute = new System.Windows.Forms.NumericUpDown();
-            this.button_LoadTest_SaveTest = new System.Windows.Forms.Button();
             this.button_LoadTest_CancelTest = new System.Windows.Forms.Button();
-            this.DGV_ShowAllTests = new System.Windows.Forms.DataGridView();
+            this.button_LoadTest_SaveTest = new System.Windows.Forms.Button();
+            this.numericUpDown_LoadTest_Minute = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_LoadTest_Hour = new System.Windows.Forms.NumericUpDown();
+            this.textBox_LoadTest_NumOfQuestions = new System.Windows.Forms.TextBox();
+            this.textBox_LoadTest_NameOfTest = new System.Windows.Forms.TextBox();
+            this.textBox_LoadTest_Author = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.button_LoadTest_File = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.comboBox_AsignesTest_Groups = new System.Windows.Forms.ComboBox();
-            this.DGV_AsignesTest_TestsForGroup = new System.Windows.Forms.DataGridView();
-            this.DGV_AsignesTest_AllTests = new System.Windows.Forms.DataGridView();
+            this.DGV_ShowAllTests = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
             this.button_AsignesTest_AddTest = new System.Windows.Forms.Button();
+            this.DGV_AsignesTest_AllTests = new System.Windows.Forms.DataGridView();
+            this.DGV_AsignesTest_TestsForGroup = new System.Windows.Forms.DataGridView();
+            this.comboBox_AsignesTest_Groups = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.button_ShowTestsOfGroup_RemoveTest = new System.Windows.Forms.Button();
             this.DGV_ShowTestsOfGroup = new System.Windows.Forms.DataGridView();
             this.comboBox_ShowTestsOfGroup = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.button_ShowTestsOfGroup_RemoveTest = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            this.tabPage9.SuspendLayout();
-            this.tabPage10.SuspendLayout();
-            this.tabPage11.SuspendLayout();
-            this.tabPage12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUsers)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateUsers)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowAllGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddGroup)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddGroup)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUserToGroup_NewGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateGroup)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUserToGroup_AllStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUserToGroup_NewGroup)).BeginInit();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowUsersInGroup)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowUsers)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUsers)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateUsers)).BeginInit();
+            this.tabPage9.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LoadTest_Hour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LoadTest_Minute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LoadTest_Hour)).BeginInit();
+            this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowAllTests)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AsignesTest_TestsForGroup)).BeginInit();
+            this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_AsignesTest_AllTests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AsignesTest_TestsForGroup)).BeginInit();
+            this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowTestsOfGroup)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,7 +192,7 @@
             this.serverToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 458);
+            this.menuStrip1.Size = new System.Drawing.Size(63, 458);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -316,7 +316,7 @@
             // serverToolStripMenuItem
             // 
             this.serverToolStripMenuItem.Name = "serverToolStripMenuItem";
-            this.serverToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.serverToolStripMenuItem.Size = new System.Drawing.Size(50, 19);
             this.serverToolStripMenuItem.Text = "Results";
             // 
             // tabControl1
@@ -334,11 +334,11 @@
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Controls.Add(this.tabPage12);
-            this.tabControl1.Location = new System.Drawing.Point(22, -4);
+            this.tabControl1.Location = new System.Drawing.Point(66, 0);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(766, 469);
+            this.tabControl1.Size = new System.Drawing.Size(767, 469);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -348,151 +348,19 @@
             this.tabPage1.Location = new System.Drawing.Point(42, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(720, 461);
+            this.tabPage1.Size = new System.Drawing.Size(721, 461);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Show";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // DGV_ShowAllGroups
             // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.DGV_AddGroup);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(42, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(722, 461);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Add";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Controls.Add(this.DGV_UpdateGroup);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(42, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(722, 461);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Update";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.button_AddUserToGroup);
-            this.tabPage4.Controls.Add(this.DGV_AddUserToGroup_AllStudents);
-            this.tabPage4.Controls.Add(this.DGV_AddUserToGroup_NewGroup);
-            this.tabPage4.Controls.Add(this.comboBox_AddUserToGroup);
-            this.tabPage4.Controls.Add(this.label4);
-            this.tabPage4.Location = new System.Drawing.Point(42, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(722, 461);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Add user to Group";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.button_ShowUsersInGroup_RemoveStudent);
-            this.tabPage5.Controls.Add(this.label25);
-            this.tabPage5.Controls.Add(this.comboBox_ShowUsersInGroup);
-            this.tabPage5.Controls.Add(this.DGV_ShowUsersInGroup);
-            this.tabPage5.Controls.Add(this.label5);
-            this.tabPage5.Location = new System.Drawing.Point(42, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(722, 461);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Show Users";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.DGV_ShowUsers);
-            this.tabPage6.Controls.Add(this.label6);
-            this.tabPage6.Location = new System.Drawing.Point(42, 4);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(722, 461);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Show";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.groupBox1);
-            this.tabPage7.Controls.Add(this.DGV_AddUsers);
-            this.tabPage7.Controls.Add(this.label7);
-            this.tabPage7.Location = new System.Drawing.Point(42, 4);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(722, 461);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Add";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.groupBox2);
-            this.tabPage8.Controls.Add(this.DGV_UpdateUsers);
-            this.tabPage8.Controls.Add(this.label8);
-            this.tabPage8.Location = new System.Drawing.Point(42, 4);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(722, 461);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Update";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.groupBox5);
-            this.tabPage9.Controls.Add(this.button_LoadTest_File);
-            this.tabPage9.Controls.Add(this.label9);
-            this.tabPage9.Location = new System.Drawing.Point(42, 4);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(722, 461);
-            this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "Load Test";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Controls.Add(this.button1);
-            this.tabPage10.Controls.Add(this.DGV_ShowAllTests);
-            this.tabPage10.Controls.Add(this.label10);
-            this.tabPage10.Location = new System.Drawing.Point(42, 4);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(722, 461);
-            this.tabPage10.TabIndex = 9;
-            this.tabPage10.Text = "Show all";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // tabPage11
-            // 
-            this.tabPage11.Controls.Add(this.button_AsignesTest_AddTest);
-            this.tabPage11.Controls.Add(this.DGV_AsignesTest_AllTests);
-            this.tabPage11.Controls.Add(this.DGV_AsignesTest_TestsForGroup);
-            this.tabPage11.Controls.Add(this.comboBox_AsignesTest_Groups);
-            this.tabPage11.Controls.Add(this.label32);
-            this.tabPage11.Controls.Add(this.label11);
-            this.tabPage11.Location = new System.Drawing.Point(42, 4);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(722, 461);
-            this.tabPage11.TabIndex = 10;
-            this.tabPage11.Text = "Asignes Test";
-            this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Controls.Add(this.button_ShowTestsOfGroup_RemoveTest);
-            this.tabPage12.Controls.Add(this.DGV_ShowTestsOfGroup);
-            this.tabPage12.Controls.Add(this.comboBox_ShowTestsOfGroup);
-            this.tabPage12.Controls.Add(this.label33);
-            this.tabPage12.Controls.Add(this.label12);
-            this.tabPage12.Location = new System.Drawing.Point(42, 4);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(722, 461);
-            this.tabPage12.TabIndex = 11;
-            this.tabPage12.Text = "Show tests of group";
-            this.tabPage12.UseVisualStyleBackColor = true;
+            this.DGV_ShowAllGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ShowAllGroups.Location = new System.Drawing.Point(10, 28);
+            this.DGV_ShowAllGroups.Name = "DGV_ShowAllGroups";
+            this.DGV_ShowAllGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_ShowAllGroups.Size = new System.Drawing.Size(703, 425);
+            this.DGV_ShowAllGroups.TabIndex = 2;
             // 
             // label1
             // 
@@ -504,6 +372,71 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Show all Groups";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.DGV_AddGroup);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Location = new System.Drawing.Point(42, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(721, 461);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Add";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button_AddGroup);
+            this.groupBox3.Controls.Add(this.textBox_AddGroup_Name);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Location = new System.Drawing.Point(432, 38);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(281, 203);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Add Group";
+            // 
+            // button_AddGroup
+            // 
+            this.button_AddGroup.Enabled = false;
+            this.button_AddGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_AddGroup.Location = new System.Drawing.Point(10, 117);
+            this.button_AddGroup.Name = "button_AddGroup";
+            this.button_AddGroup.Size = new System.Drawing.Size(256, 62);
+            this.button_AddGroup.TabIndex = 2;
+            this.button_AddGroup.Text = "Add Group";
+            this.button_AddGroup.UseVisualStyleBackColor = true;
+            this.button_AddGroup.Click += new System.EventHandler(this.Button_AddGroup_Click);
+            // 
+            // textBox_AddGroup_Name
+            // 
+            this.textBox_AddGroup_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_AddGroup_Name.Location = new System.Drawing.Point(10, 60);
+            this.textBox_AddGroup_Name.Name = "textBox_AddGroup_Name";
+            this.textBox_AddGroup_Name.Size = new System.Drawing.Size(256, 22);
+            this.textBox_AddGroup_Name.TabIndex = 1;
+            this.textBox_AddGroup_Name.TextChanged += new System.EventHandler(this.TextBox_AddGroup_Name_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.Location = new System.Drawing.Point(7, 41);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(91, 16);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Group Name: ";
+            // 
+            // DGV_AddGroup
+            // 
+            this.DGV_AddGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_AddGroup.Location = new System.Drawing.Point(7, 38);
+            this.DGV_AddGroup.Name = "DGV_AddGroup";
+            this.DGV_AddGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_AddGroup.Size = new System.Drawing.Size(419, 417);
+            this.DGV_AddGroup.TabIndex = 4;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -513,6 +446,70 @@
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Add Group";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.DGV_UpdateGroup);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Location = new System.Drawing.Point(42, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(721, 461);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Update";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button_UpdateGroup);
+            this.groupBox4.Controls.Add(this.textBox_UpdateGroup_NewName);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Location = new System.Drawing.Point(445, 28);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(268, 203);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Update Group";
+            // 
+            // button_UpdateGroup
+            // 
+            this.button_UpdateGroup.Enabled = false;
+            this.button_UpdateGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_UpdateGroup.Location = new System.Drawing.Point(10, 117);
+            this.button_UpdateGroup.Name = "button_UpdateGroup";
+            this.button_UpdateGroup.Size = new System.Drawing.Size(246, 62);
+            this.button_UpdateGroup.TabIndex = 2;
+            this.button_UpdateGroup.Text = "Update Group";
+            this.button_UpdateGroup.UseVisualStyleBackColor = true;
+            this.button_UpdateGroup.Click += new System.EventHandler(this.Button_UpdateGroup_Click);
+            // 
+            // textBox_UpdateGroup_NewName
+            // 
+            this.textBox_UpdateGroup_NewName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_UpdateGroup_NewName.Location = new System.Drawing.Point(10, 60);
+            this.textBox_UpdateGroup_NewName.Name = "textBox_UpdateGroup_NewName";
+            this.textBox_UpdateGroup_NewName.Size = new System.Drawing.Size(246, 22);
+            this.textBox_UpdateGroup_NewName.TabIndex = 1;
+            this.textBox_UpdateGroup_NewName.TextChanged += new System.EventHandler(this.TextBox_UpdateGroup_NewName_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label24.Location = new System.Drawing.Point(7, 41);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(121, 16);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Group New Name: ";
+            // 
+            // DGV_UpdateGroup
+            // 
+            this.DGV_UpdateGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_UpdateGroup.Location = new System.Drawing.Point(7, 28);
+            this.DGV_UpdateGroup.Name = "DGV_UpdateGroup";
+            this.DGV_UpdateGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_UpdateGroup.Size = new System.Drawing.Size(432, 425);
+            this.DGV_UpdateGroup.TabIndex = 5;
             // 
             // label3
             // 
@@ -524,6 +521,56 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Update Group";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button_AddUserToGroup);
+            this.tabPage4.Controls.Add(this.DGV_AddUserToGroup_AllStudents);
+            this.tabPage4.Controls.Add(this.DGV_AddUserToGroup_NewGroup);
+            this.tabPage4.Controls.Add(this.comboBox_AddUserToGroup);
+            this.tabPage4.Controls.Add(this.label4);
+            this.tabPage4.Location = new System.Drawing.Point(42, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(721, 461);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Add user to Group";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button_AddUserToGroup
+            // 
+            this.button_AddUserToGroup.Location = new System.Drawing.Point(7, 420);
+            this.button_AddUserToGroup.Name = "button_AddUserToGroup";
+            this.button_AddUserToGroup.Size = new System.Drawing.Size(706, 37);
+            this.button_AddUserToGroup.TabIndex = 8;
+            this.button_AddUserToGroup.Text = "Add User to Group";
+            this.button_AddUserToGroup.UseVisualStyleBackColor = true;
+            // 
+            // DGV_AddUserToGroup_AllStudents
+            // 
+            this.DGV_AddUserToGroup_AllStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_AddUserToGroup_AllStudents.Location = new System.Drawing.Point(7, 244);
+            this.DGV_AddUserToGroup_AllStudents.Name = "DGV_AddUserToGroup_AllStudents";
+            this.DGV_AddUserToGroup_AllStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_AddUserToGroup_AllStudents.Size = new System.Drawing.Size(706, 170);
+            this.DGV_AddUserToGroup_AllStudents.TabIndex = 7;
+            // 
+            // DGV_AddUserToGroup_NewGroup
+            // 
+            this.DGV_AddUserToGroup_NewGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_AddUserToGroup_NewGroup.Location = new System.Drawing.Point(7, 68);
+            this.DGV_AddUserToGroup_NewGroup.Name = "DGV_AddUserToGroup_NewGroup";
+            this.DGV_AddUserToGroup_NewGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_AddUserToGroup_NewGroup.Size = new System.Drawing.Size(706, 170);
+            this.DGV_AddUserToGroup_NewGroup.TabIndex = 6;
+            // 
+            // comboBox_AddUserToGroup
+            // 
+            this.comboBox_AddUserToGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_AddUserToGroup.FormattingEnabled = true;
+            this.comboBox_AddUserToGroup.Location = new System.Drawing.Point(7, 38);
+            this.comboBox_AddUserToGroup.Name = "comboBox_AddUserToGroup";
+            this.comboBox_AddUserToGroup.Size = new System.Drawing.Size(279, 24);
+            this.comboBox_AddUserToGroup.TabIndex = 5;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -533,6 +580,58 @@
             this.label4.Size = new System.Drawing.Size(160, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Add User to Group";
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.button_ShowUsersInGroup_RemoveStudent);
+            this.tabPage5.Controls.Add(this.label25);
+            this.tabPage5.Controls.Add(this.comboBox_ShowUsersInGroup);
+            this.tabPage5.Controls.Add(this.DGV_ShowUsersInGroup);
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Location = new System.Drawing.Point(42, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(721, 461);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Show Users";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button_ShowUsersInGroup_RemoveStudent
+            // 
+            this.button_ShowUsersInGroup_RemoveStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_ShowUsersInGroup_RemoveStudent.Location = new System.Drawing.Point(7, 415);
+            this.button_ShowUsersInGroup_RemoveStudent.Name = "button_ShowUsersInGroup_RemoveStudent";
+            this.button_ShowUsersInGroup_RemoveStudent.Size = new System.Drawing.Size(706, 38);
+            this.button_ShowUsersInGroup_RemoveStudent.TabIndex = 8;
+            this.button_ShowUsersInGroup_RemoveStudent.Text = "Remove Student";
+            this.button_ShowUsersInGroup_RemoveStudent.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.Location = new System.Drawing.Point(320, 38);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(58, 16);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "Groups: ";
+            // 
+            // comboBox_ShowUsersInGroup
+            // 
+            this.comboBox_ShowUsersInGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_ShowUsersInGroup.FormattingEnabled = true;
+            this.comboBox_ShowUsersInGroup.Location = new System.Drawing.Point(384, 35);
+            this.comboBox_ShowUsersInGroup.Name = "comboBox_ShowUsersInGroup";
+            this.comboBox_ShowUsersInGroup.Size = new System.Drawing.Size(329, 24);
+            this.comboBox_ShowUsersInGroup.TabIndex = 6;
+            // 
+            // DGV_ShowUsersInGroup
+            // 
+            this.DGV_ShowUsersInGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ShowUsersInGroup.Location = new System.Drawing.Point(7, 65);
+            this.DGV_ShowUsersInGroup.Name = "DGV_ShowUsersInGroup";
+            this.DGV_ShowUsersInGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_ShowUsersInGroup.Size = new System.Drawing.Size(706, 344);
+            this.DGV_ShowUsersInGroup.TabIndex = 5;
             // 
             // label5
             // 
@@ -544,75 +643,16 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Show Users in Group";
             // 
-            // label6
+            // tabPage6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(3, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Show Users";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(3, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Add Users";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(3, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 20);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Update Users";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(3, 5);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Load Test";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(3, 5);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 20);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Show all Tests";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(3, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 20);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Asignes Test";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(3, 5);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(178, 20);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Show Tests of Group";
+            this.tabPage6.Controls.Add(this.DGV_ShowUsers);
+            this.tabPage6.Controls.Add(this.label6);
+            this.tabPage6.Location = new System.Drawing.Point(42, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(721, 461);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Show";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // DGV_ShowUsers
             // 
@@ -623,14 +663,27 @@
             this.DGV_ShowUsers.Size = new System.Drawing.Size(706, 425);
             this.DGV_ShowUsers.TabIndex = 6;
             // 
-            // DGV_AddUsers
+            // label6
             // 
-            this.DGV_AddUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_AddUsers.Location = new System.Drawing.Point(7, 37);
-            this.DGV_AddUsers.Name = "DGV_AddUsers";
-            this.DGV_AddUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_AddUsers.Size = new System.Drawing.Size(437, 416);
-            this.DGV_AddUsers.TabIndex = 6;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(3, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Show Users";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.groupBox1);
+            this.tabPage7.Controls.Add(this.DGV_AddUsers);
+            this.tabPage7.Controls.Add(this.label7);
+            this.tabPage7.Location = new System.Drawing.Point(42, 4);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(721, 461);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Add";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -653,95 +706,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sign Up";
             // 
-            // label13
+            // button_AddUser
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(7, 33);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 16);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "First Name: ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(6, 88);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 16);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Last Name: ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(6, 144);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 16);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Login: ";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(9, 198);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 16);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Password: ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(7, 252);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(121, 16);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Confirm password: ";
-            // 
-            // textBox_FirstName
-            // 
-            this.textBox_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_FirstName.Location = new System.Drawing.Point(10, 49);
-            this.textBox_FirstName.Name = "textBox_FirstName";
-            this.textBox_FirstName.Size = new System.Drawing.Size(246, 22);
-            this.textBox_FirstName.TabIndex = 5;
-            // 
-            // textBox_LastName
-            // 
-            this.textBox_LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_LastName.Location = new System.Drawing.Point(10, 104);
-            this.textBox_LastName.Name = "textBox_LastName";
-            this.textBox_LastName.Size = new System.Drawing.Size(246, 22);
-            this.textBox_LastName.TabIndex = 6;
-            // 
-            // textBox_Login
-            // 
-            this.textBox_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Login.Location = new System.Drawing.Point(9, 160);
-            this.textBox_Login.Name = "textBox_Login";
-            this.textBox_Login.Size = new System.Drawing.Size(246, 22);
-            this.textBox_Login.TabIndex = 7;
-            // 
-            // textBox_Password
-            // 
-            this.textBox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_Password.Location = new System.Drawing.Point(9, 214);
-            this.textBox_Password.Name = "textBox_Password";
-            this.textBox_Password.Size = new System.Drawing.Size(246, 22);
-            this.textBox_Password.TabIndex = 8;
-            // 
-            // textBox_ConfirmPassword
-            // 
-            this.textBox_ConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_ConfirmPassword.Location = new System.Drawing.Point(10, 268);
-            this.textBox_ConfirmPassword.Name = "textBox_ConfirmPassword";
-            this.textBox_ConfirmPassword.Size = new System.Drawing.Size(246, 22);
-            this.textBox_ConfirmPassword.TabIndex = 9;
+            this.button_AddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_AddUser.Location = new System.Drawing.Point(9, 358);
+            this.button_AddUser.Name = "button_AddUser";
+            this.button_AddUser.Size = new System.Drawing.Size(246, 52);
+            this.button_AddUser.TabIndex = 11;
+            this.button_AddUser.Text = "Add";
+            this.button_AddUser.UseVisualStyleBackColor = true;
+            this.button_AddUser.Click += new System.EventHandler(this.Button_AddUser_Click);
             // 
             // checkBox_IsAdmin
             // 
@@ -754,24 +728,128 @@
             this.checkBox_IsAdmin.Text = "Admin";
             this.checkBox_IsAdmin.UseVisualStyleBackColor = true;
             // 
-            // button_AddUser
+            // textBox_ConfirmPassword
             // 
-            this.button_AddUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_AddUser.Location = new System.Drawing.Point(9, 358);
-            this.button_AddUser.Name = "button_AddUser";
-            this.button_AddUser.Size = new System.Drawing.Size(246, 52);
-            this.button_AddUser.TabIndex = 11;
-            this.button_AddUser.Text = "Add";
-            this.button_AddUser.UseVisualStyleBackColor = true;
+            this.textBox_ConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_ConfirmPassword.Location = new System.Drawing.Point(10, 268);
+            this.textBox_ConfirmPassword.Name = "textBox_ConfirmPassword";
+            this.textBox_ConfirmPassword.PasswordChar = '*';
+            this.textBox_ConfirmPassword.Size = new System.Drawing.Size(246, 22);
+            this.textBox_ConfirmPassword.TabIndex = 9;
             // 
-            // DGV_UpdateUsers
+            // textBox_Password
             // 
-            this.DGV_UpdateUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_UpdateUsers.Location = new System.Drawing.Point(7, 28);
-            this.DGV_UpdateUsers.Name = "DGV_UpdateUsers";
-            this.DGV_UpdateUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_UpdateUsers.Size = new System.Drawing.Size(442, 430);
-            this.DGV_UpdateUsers.TabIndex = 6;
+            this.textBox_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Password.Location = new System.Drawing.Point(9, 214);
+            this.textBox_Password.Name = "textBox_Password";
+            this.textBox_Password.PasswordChar = '*';
+            this.textBox_Password.Size = new System.Drawing.Size(246, 22);
+            this.textBox_Password.TabIndex = 8;
+            // 
+            // textBox_Login
+            // 
+            this.textBox_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_Login.Location = new System.Drawing.Point(9, 160);
+            this.textBox_Login.Name = "textBox_Login";
+            this.textBox_Login.Size = new System.Drawing.Size(246, 22);
+            this.textBox_Login.TabIndex = 7;
+            // 
+            // textBox_LastName
+            // 
+            this.textBox_LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_LastName.Location = new System.Drawing.Point(10, 104);
+            this.textBox_LastName.Name = "textBox_LastName";
+            this.textBox_LastName.Size = new System.Drawing.Size(246, 22);
+            this.textBox_LastName.TabIndex = 6;
+            // 
+            // textBox_FirstName
+            // 
+            this.textBox_FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_FirstName.Location = new System.Drawing.Point(10, 49);
+            this.textBox_FirstName.Name = "textBox_FirstName";
+            this.textBox_FirstName.Size = new System.Drawing.Size(246, 22);
+            this.textBox_FirstName.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(7, 252);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(121, 16);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Confirm password: ";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(9, 198);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(74, 16);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Password: ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(6, 144);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 16);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Login: ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(6, 88);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 16);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Last Name: ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(7, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(79, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "First Name: ";
+            // 
+            // DGV_AddUsers
+            // 
+            this.DGV_AddUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_AddUsers.Location = new System.Drawing.Point(7, 37);
+            this.DGV_AddUsers.Name = "DGV_AddUsers";
+            this.DGV_AddUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_AddUsers.Size = new System.Drawing.Size(437, 416);
+            this.DGV_AddUsers.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(3, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Add Users";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.groupBox2);
+            this.tabPage8.Controls.Add(this.DGV_UpdateUsers);
+            this.tabPage8.Controls.Add(this.label8);
+            this.tabPage8.Location = new System.Drawing.Point(42, 4);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(721, 461);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Update";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -803,6 +881,7 @@
             this.button_Update_User.TabIndex = 11;
             this.button_Update_User.Text = "Update";
             this.button_Update_User.UseVisualStyleBackColor = true;
+            this.button_Update_User.Click += new System.EventHandler(this.Button_Update_User_Click);
             // 
             // checkBox_IsAdmin_Upd
             // 
@@ -820,6 +899,7 @@
             this.textBox_ConfirmPassword_Upd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_ConfirmPassword_Upd.Location = new System.Drawing.Point(10, 268);
             this.textBox_ConfirmPassword_Upd.Name = "textBox_ConfirmPassword_Upd";
+            this.textBox_ConfirmPassword_Upd.PasswordChar = '*';
             this.textBox_ConfirmPassword_Upd.Size = new System.Drawing.Size(246, 22);
             this.textBox_ConfirmPassword_Upd.TabIndex = 9;
             // 
@@ -828,6 +908,7 @@
             this.textBox_Password_Upd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox_Password_Upd.Location = new System.Drawing.Point(9, 214);
             this.textBox_Password_Upd.Name = "textBox_Password_Upd";
+            this.textBox_Password_Upd.PasswordChar = '*';
             this.textBox_Password_Upd.Size = new System.Drawing.Size(246, 22);
             this.textBox_Password_Upd.TabIndex = 8;
             // 
@@ -905,200 +986,37 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "First Name: ";
             // 
-            // DGV_ShowAllGroups
+            // DGV_UpdateUsers
             // 
-            this.DGV_ShowAllGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ShowAllGroups.Location = new System.Drawing.Point(10, 28);
-            this.DGV_ShowAllGroups.Name = "DGV_ShowAllGroups";
-            this.DGV_ShowAllGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_ShowAllGroups.Size = new System.Drawing.Size(703, 425);
-            this.DGV_ShowAllGroups.TabIndex = 2;
+            this.DGV_UpdateUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_UpdateUsers.Location = new System.Drawing.Point(7, 28);
+            this.DGV_UpdateUsers.Name = "DGV_UpdateUsers";
+            this.DGV_UpdateUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_UpdateUsers.Size = new System.Drawing.Size(442, 430);
+            this.DGV_UpdateUsers.TabIndex = 6;
+            this.DGV_UpdateUsers.SelectionChanged += new System.EventHandler(this.DGV_UpdateUsers_SelectionChanged);
             // 
-            // DGV_AddGroup
+            // label8
             // 
-            this.DGV_AddGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_AddGroup.Location = new System.Drawing.Point(7, 38);
-            this.DGV_AddGroup.Name = "DGV_AddGroup";
-            this.DGV_AddGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_AddGroup.Size = new System.Drawing.Size(419, 417);
-            this.DGV_AddGroup.TabIndex = 4;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(3, 5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 20);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Update Users";
             // 
-            // groupBox3
+            // tabPage9
             // 
-            this.groupBox3.Controls.Add(this.button_AddGroup);
-            this.groupBox3.Controls.Add(this.textBox_AddGroup_Name);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Location = new System.Drawing.Point(432, 38);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(281, 203);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Add Group";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.Location = new System.Drawing.Point(7, 41);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(91, 16);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Group Name: ";
-            // 
-            // textBox_AddGroup_Name
-            // 
-            this.textBox_AddGroup_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_AddGroup_Name.Location = new System.Drawing.Point(10, 60);
-            this.textBox_AddGroup_Name.Name = "textBox_AddGroup_Name";
-            this.textBox_AddGroup_Name.Size = new System.Drawing.Size(256, 22);
-            this.textBox_AddGroup_Name.TabIndex = 1;
-            // 
-            // button_AddGroup
-            // 
-            this.button_AddGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_AddGroup.Location = new System.Drawing.Point(10, 117);
-            this.button_AddGroup.Name = "button_AddGroup";
-            this.button_AddGroup.Size = new System.Drawing.Size(256, 62);
-            this.button_AddGroup.TabIndex = 2;
-            this.button_AddGroup.Text = "Add Group";
-            this.button_AddGroup.UseVisualStyleBackColor = true;
-            // 
-            // DGV_UpdateGroup
-            // 
-            this.DGV_UpdateGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_UpdateGroup.Location = new System.Drawing.Point(7, 28);
-            this.DGV_UpdateGroup.Name = "DGV_UpdateGroup";
-            this.DGV_UpdateGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_UpdateGroup.Size = new System.Drawing.Size(432, 425);
-            this.DGV_UpdateGroup.TabIndex = 5;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button_UpdateGroup);
-            this.groupBox4.Controls.Add(this.textBox_UpdateGroup_NewName);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Location = new System.Drawing.Point(445, 28);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(268, 203);
-            this.groupBox4.TabIndex = 6;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Update Group";
-            // 
-            // button_UpdateGroup
-            // 
-            this.button_UpdateGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_UpdateGroup.Location = new System.Drawing.Point(10, 117);
-            this.button_UpdateGroup.Name = "button_UpdateGroup";
-            this.button_UpdateGroup.Size = new System.Drawing.Size(246, 62);
-            this.button_UpdateGroup.TabIndex = 2;
-            this.button_UpdateGroup.Text = "Update Group";
-            this.button_UpdateGroup.UseVisualStyleBackColor = true;
-            // 
-            // textBox_UpdateGroup_NewName
-            // 
-            this.textBox_UpdateGroup_NewName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_UpdateGroup_NewName.Location = new System.Drawing.Point(10, 60);
-            this.textBox_UpdateGroup_NewName.Name = "textBox_UpdateGroup_NewName";
-            this.textBox_UpdateGroup_NewName.Size = new System.Drawing.Size(246, 22);
-            this.textBox_UpdateGroup_NewName.TabIndex = 1;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.Location = new System.Drawing.Point(7, 41);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(121, 16);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Group New Name: ";
-            // 
-            // comboBox_AddUserToGroup
-            // 
-            this.comboBox_AddUserToGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox_AddUserToGroup.FormattingEnabled = true;
-            this.comboBox_AddUserToGroup.Location = new System.Drawing.Point(7, 38);
-            this.comboBox_AddUserToGroup.Name = "comboBox_AddUserToGroup";
-            this.comboBox_AddUserToGroup.Size = new System.Drawing.Size(279, 24);
-            this.comboBox_AddUserToGroup.TabIndex = 5;
-            // 
-            // DGV_AddUserToGroup_NewGroup
-            // 
-            this.DGV_AddUserToGroup_NewGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_AddUserToGroup_NewGroup.Location = new System.Drawing.Point(7, 68);
-            this.DGV_AddUserToGroup_NewGroup.Name = "DGV_AddUserToGroup_NewGroup";
-            this.DGV_AddUserToGroup_NewGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_AddUserToGroup_NewGroup.Size = new System.Drawing.Size(706, 170);
-            this.DGV_AddUserToGroup_NewGroup.TabIndex = 6;
-            // 
-            // DGV_AddUserToGroup_AllStudents
-            // 
-            this.DGV_AddUserToGroup_AllStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_AddUserToGroup_AllStudents.Location = new System.Drawing.Point(7, 244);
-            this.DGV_AddUserToGroup_AllStudents.Name = "DGV_AddUserToGroup_AllStudents";
-            this.DGV_AddUserToGroup_AllStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_AddUserToGroup_AllStudents.Size = new System.Drawing.Size(706, 170);
-            this.DGV_AddUserToGroup_AllStudents.TabIndex = 7;
-            // 
-            // button_AddUserToGroup
-            // 
-            this.button_AddUserToGroup.Location = new System.Drawing.Point(7, 420);
-            this.button_AddUserToGroup.Name = "button_AddUserToGroup";
-            this.button_AddUserToGroup.Size = new System.Drawing.Size(706, 37);
-            this.button_AddUserToGroup.TabIndex = 8;
-            this.button_AddUserToGroup.Text = "Add User to Group";
-            this.button_AddUserToGroup.UseVisualStyleBackColor = true;
-            // 
-            // DGV_ShowUsersInGroup
-            // 
-            this.DGV_ShowUsersInGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ShowUsersInGroup.Location = new System.Drawing.Point(7, 65);
-            this.DGV_ShowUsersInGroup.Name = "DGV_ShowUsersInGroup";
-            this.DGV_ShowUsersInGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_ShowUsersInGroup.Size = new System.Drawing.Size(706, 344);
-            this.DGV_ShowUsersInGroup.TabIndex = 5;
-            // 
-            // comboBox_ShowUsersInGroup
-            // 
-            this.comboBox_ShowUsersInGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox_ShowUsersInGroup.FormattingEnabled = true;
-            this.comboBox_ShowUsersInGroup.Location = new System.Drawing.Point(384, 35);
-            this.comboBox_ShowUsersInGroup.Name = "comboBox_ShowUsersInGroup";
-            this.comboBox_ShowUsersInGroup.Size = new System.Drawing.Size(329, 24);
-            this.comboBox_ShowUsersInGroup.TabIndex = 6;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(320, 38);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(58, 16);
-            this.label25.TabIndex = 7;
-            this.label25.Text = "Groups: ";
-            // 
-            // button_ShowUsersInGroup_RemoveStudent
-            // 
-            this.button_ShowUsersInGroup_RemoveStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ShowUsersInGroup_RemoveStudent.Location = new System.Drawing.Point(7, 415);
-            this.button_ShowUsersInGroup_RemoveStudent.Name = "button_ShowUsersInGroup_RemoveStudent";
-            this.button_ShowUsersInGroup_RemoveStudent.Size = new System.Drawing.Size(706, 38);
-            this.button_ShowUsersInGroup_RemoveStudent.TabIndex = 8;
-            this.button_ShowUsersInGroup_RemoveStudent.Text = "Remove Student";
-            this.button_ShowUsersInGroup_RemoveStudent.UseVisualStyleBackColor = true;
-            // 
-            // button_LoadTest_File
-            // 
-            this.button_LoadTest_File.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_LoadTest_File.Location = new System.Drawing.Point(7, 41);
-            this.button_LoadTest_File.Name = "button_LoadTest_File";
-            this.button_LoadTest_File.Size = new System.Drawing.Size(162, 38);
-            this.button_LoadTest_File.TabIndex = 6;
-            this.button_LoadTest_File.Text = "File";
-            this.button_LoadTest_File.UseVisualStyleBackColor = true;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.tabPage9.Controls.Add(this.groupBox5);
+            this.tabPage9.Controls.Add(this.button_LoadTest_File);
+            this.tabPage9.Controls.Add(this.label9);
+            this.tabPage9.Location = new System.Drawing.Point(42, 4);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(721, 461);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Load Test";
+            this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -1122,102 +1040,25 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Info";
             // 
-            // label26
+            // button_LoadTest_CancelTest
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(16, 57);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(52, 16);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Author: ";
+            this.button_LoadTest_CancelTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_LoadTest_CancelTest.Location = new System.Drawing.Point(258, 320);
+            this.button_LoadTest_CancelTest.Name = "button_LoadTest_CancelTest";
+            this.button_LoadTest_CancelTest.Size = new System.Drawing.Size(159, 38);
+            this.button_LoadTest_CancelTest.TabIndex = 13;
+            this.button_LoadTest_CancelTest.Text = "Cancel";
+            this.button_LoadTest_CancelTest.UseVisualStyleBackColor = true;
             // 
-            // label27
+            // button_LoadTest_SaveTest
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.Location = new System.Drawing.Point(16, 100);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(95, 16);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "Name of Test: ";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.Location = new System.Drawing.Point(16, 145);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(117, 16);
-            this.label28.TabIndex = 2;
-            this.label28.Text = "Num of questions: ";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label29.Location = new System.Drawing.Point(15, 221);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(47, 20);
-            this.label29.TabIndex = 3;
-            this.label29.Text = "Time";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.Location = new System.Drawing.Point(16, 264);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(43, 16);
-            this.label30.TabIndex = 4;
-            this.label30.Text = "Hour: ";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.Location = new System.Drawing.Point(230, 264);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(53, 16);
-            this.label31.TabIndex = 5;
-            this.label31.Text = "Minute: ";
-            // 
-            // textBox_LoadTest_Author
-            // 
-            this.textBox_LoadTest_Author.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_LoadTest_Author.Location = new System.Drawing.Point(152, 57);
-            this.textBox_LoadTest_Author.Name = "textBox_LoadTest_Author";
-            this.textBox_LoadTest_Author.Size = new System.Drawing.Size(265, 22);
-            this.textBox_LoadTest_Author.TabIndex = 6;
-            // 
-            // textBox_LoadTest_NameOfTest
-            // 
-            this.textBox_LoadTest_NameOfTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_LoadTest_NameOfTest.Location = new System.Drawing.Point(152, 100);
-            this.textBox_LoadTest_NameOfTest.Name = "textBox_LoadTest_NameOfTest";
-            this.textBox_LoadTest_NameOfTest.Size = new System.Drawing.Size(265, 22);
-            this.textBox_LoadTest_NameOfTest.TabIndex = 7;
-            // 
-            // textBox_LoadTest_NumOfQuestions
-            // 
-            this.textBox_LoadTest_NumOfQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_LoadTest_NumOfQuestions.Location = new System.Drawing.Point(152, 145);
-            this.textBox_LoadTest_NumOfQuestions.Name = "textBox_LoadTest_NumOfQuestions";
-            this.textBox_LoadTest_NumOfQuestions.Size = new System.Drawing.Size(265, 22);
-            this.textBox_LoadTest_NumOfQuestions.TabIndex = 8;
-            // 
-            // numericUpDown_LoadTest_Hour
-            // 
-            this.numericUpDown_LoadTest_Hour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown_LoadTest_Hour.Location = new System.Drawing.Point(58, 262);
-            this.numericUpDown_LoadTest_Hour.Maximum = new decimal(new int[] {
-            48,
-            0,
-            0,
-            0});
-            this.numericUpDown_LoadTest_Hour.Name = "numericUpDown_LoadTest_Hour";
-            this.numericUpDown_LoadTest_Hour.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown_LoadTest_Hour.TabIndex = 10;
+            this.button_LoadTest_SaveTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_LoadTest_SaveTest.Location = new System.Drawing.Point(19, 320);
+            this.button_LoadTest_SaveTest.Name = "button_LoadTest_SaveTest";
+            this.button_LoadTest_SaveTest.Size = new System.Drawing.Size(159, 38);
+            this.button_LoadTest_SaveTest.TabIndex = 12;
+            this.button_LoadTest_SaveTest.Text = "Save";
+            this.button_LoadTest_SaveTest.UseVisualStyleBackColor = true;
             // 
             // numericUpDown_LoadTest_Minute
             // 
@@ -1242,34 +1083,134 @@
             0,
             0});
             // 
-            // button_LoadTest_SaveTest
+            // numericUpDown_LoadTest_Hour
             // 
-            this.button_LoadTest_SaveTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_LoadTest_SaveTest.Location = new System.Drawing.Point(19, 320);
-            this.button_LoadTest_SaveTest.Name = "button_LoadTest_SaveTest";
-            this.button_LoadTest_SaveTest.Size = new System.Drawing.Size(159, 38);
-            this.button_LoadTest_SaveTest.TabIndex = 12;
-            this.button_LoadTest_SaveTest.Text = "Save";
-            this.button_LoadTest_SaveTest.UseVisualStyleBackColor = true;
+            this.numericUpDown_LoadTest_Hour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown_LoadTest_Hour.Location = new System.Drawing.Point(58, 262);
+            this.numericUpDown_LoadTest_Hour.Maximum = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            this.numericUpDown_LoadTest_Hour.Name = "numericUpDown_LoadTest_Hour";
+            this.numericUpDown_LoadTest_Hour.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown_LoadTest_Hour.TabIndex = 10;
             // 
-            // button_LoadTest_CancelTest
+            // textBox_LoadTest_NumOfQuestions
             // 
-            this.button_LoadTest_CancelTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_LoadTest_CancelTest.Location = new System.Drawing.Point(258, 320);
-            this.button_LoadTest_CancelTest.Name = "button_LoadTest_CancelTest";
-            this.button_LoadTest_CancelTest.Size = new System.Drawing.Size(159, 38);
-            this.button_LoadTest_CancelTest.TabIndex = 13;
-            this.button_LoadTest_CancelTest.Text = "Cancel";
-            this.button_LoadTest_CancelTest.UseVisualStyleBackColor = true;
+            this.textBox_LoadTest_NumOfQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_LoadTest_NumOfQuestions.Location = new System.Drawing.Point(152, 145);
+            this.textBox_LoadTest_NumOfQuestions.Name = "textBox_LoadTest_NumOfQuestions";
+            this.textBox_LoadTest_NumOfQuestions.Size = new System.Drawing.Size(265, 22);
+            this.textBox_LoadTest_NumOfQuestions.TabIndex = 8;
             // 
-            // DGV_ShowAllTests
+            // textBox_LoadTest_NameOfTest
             // 
-            this.DGV_ShowAllTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ShowAllTests.Location = new System.Drawing.Point(7, 40);
-            this.DGV_ShowAllTests.Name = "DGV_ShowAllTests";
-            this.DGV_ShowAllTests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_ShowAllTests.Size = new System.Drawing.Size(708, 357);
-            this.DGV_ShowAllTests.TabIndex = 6;
+            this.textBox_LoadTest_NameOfTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_LoadTest_NameOfTest.Location = new System.Drawing.Point(152, 100);
+            this.textBox_LoadTest_NameOfTest.Name = "textBox_LoadTest_NameOfTest";
+            this.textBox_LoadTest_NameOfTest.Size = new System.Drawing.Size(265, 22);
+            this.textBox_LoadTest_NameOfTest.TabIndex = 7;
+            // 
+            // textBox_LoadTest_Author
+            // 
+            this.textBox_LoadTest_Author.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_LoadTest_Author.Location = new System.Drawing.Point(152, 57);
+            this.textBox_LoadTest_Author.Name = "textBox_LoadTest_Author";
+            this.textBox_LoadTest_Author.Size = new System.Drawing.Size(265, 22);
+            this.textBox_LoadTest_Author.TabIndex = 6;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label31.Location = new System.Drawing.Point(230, 264);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(53, 16);
+            this.label31.TabIndex = 5;
+            this.label31.Text = "Minute: ";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label30.Location = new System.Drawing.Point(16, 264);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(43, 16);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Hour: ";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label29.Location = new System.Drawing.Point(15, 221);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(47, 20);
+            this.label29.TabIndex = 3;
+            this.label29.Text = "Time";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label28.Location = new System.Drawing.Point(16, 145);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(117, 16);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "Num of questions: ";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label27.Location = new System.Drawing.Point(16, 100);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(95, 16);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Name of Test: ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label26.Location = new System.Drawing.Point(16, 57);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(52, 16);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Author: ";
+            // 
+            // button_LoadTest_File
+            // 
+            this.button_LoadTest_File.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_LoadTest_File.Location = new System.Drawing.Point(7, 41);
+            this.button_LoadTest_File.Name = "button_LoadTest_File";
+            this.button_LoadTest_File.Size = new System.Drawing.Size(162, 38);
+            this.button_LoadTest_File.TabIndex = 6;
+            this.button_LoadTest_File.Text = "File";
+            this.button_LoadTest_File.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(3, 5);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 20);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Load Test";
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.button1);
+            this.tabPage10.Controls.Add(this.DGV_ShowAllTests);
+            this.tabPage10.Controls.Add(this.label10);
+            this.tabPage10.Location = new System.Drawing.Point(42, 4);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(721, 461);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Show all";
+            this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -1281,42 +1222,39 @@
             this.button1.Text = "Remove Test";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label32
+            // DGV_ShowAllTests
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label32.Location = new System.Drawing.Point(396, 43);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(51, 16);
-            this.label32.TabIndex = 6;
-            this.label32.Text = "Group: ";
+            this.DGV_ShowAllTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ShowAllTests.Location = new System.Drawing.Point(7, 40);
+            this.DGV_ShowAllTests.Name = "DGV_ShowAllTests";
+            this.DGV_ShowAllTests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_ShowAllTests.Size = new System.Drawing.Size(708, 357);
+            this.DGV_ShowAllTests.TabIndex = 6;
             // 
-            // comboBox_AsignesTest_Groups
+            // label10
             // 
-            this.comboBox_AsignesTest_Groups.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox_AsignesTest_Groups.FormattingEnabled = true;
-            this.comboBox_AsignesTest_Groups.Location = new System.Drawing.Point(467, 40);
-            this.comboBox_AsignesTest_Groups.Name = "comboBox_AsignesTest_Groups";
-            this.comboBox_AsignesTest_Groups.Size = new System.Drawing.Size(246, 24);
-            this.comboBox_AsignesTest_Groups.TabIndex = 7;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(3, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 20);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Show all Tests";
             // 
-            // DGV_AsignesTest_TestsForGroup
+            // tabPage11
             // 
-            this.DGV_AsignesTest_TestsForGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_AsignesTest_TestsForGroup.Location = new System.Drawing.Point(7, 71);
-            this.DGV_AsignesTest_TestsForGroup.Name = "DGV_AsignesTest_TestsForGroup";
-            this.DGV_AsignesTest_TestsForGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_AsignesTest_TestsForGroup.Size = new System.Drawing.Size(706, 164);
-            this.DGV_AsignesTest_TestsForGroup.TabIndex = 8;
-            // 
-            // DGV_AsignesTest_AllTests
-            // 
-            this.DGV_AsignesTest_AllTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_AsignesTest_AllTests.Location = new System.Drawing.Point(7, 241);
-            this.DGV_AsignesTest_AllTests.Name = "DGV_AsignesTest_AllTests";
-            this.DGV_AsignesTest_AllTests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_AsignesTest_AllTests.Size = new System.Drawing.Size(706, 163);
-            this.DGV_AsignesTest_AllTests.TabIndex = 9;
+            this.tabPage11.Controls.Add(this.button_AsignesTest_AddTest);
+            this.tabPage11.Controls.Add(this.DGV_AsignesTest_AllTests);
+            this.tabPage11.Controls.Add(this.DGV_AsignesTest_TestsForGroup);
+            this.tabPage11.Controls.Add(this.comboBox_AsignesTest_Groups);
+            this.tabPage11.Controls.Add(this.label32);
+            this.tabPage11.Controls.Add(this.label11);
+            this.tabPage11.Location = new System.Drawing.Point(42, 4);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Size = new System.Drawing.Size(721, 461);
+            this.tabPage11.TabIndex = 10;
+            this.tabPage11.Text = "Asignes Test";
+            this.tabPage11.UseVisualStyleBackColor = true;
             // 
             // button_AsignesTest_AddTest
             // 
@@ -1327,6 +1265,77 @@
             this.button_AsignesTest_AddTest.TabIndex = 10;
             this.button_AsignesTest_AddTest.Text = "Add Test";
             this.button_AsignesTest_AddTest.UseVisualStyleBackColor = true;
+            // 
+            // DGV_AsignesTest_AllTests
+            // 
+            this.DGV_AsignesTest_AllTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_AsignesTest_AllTests.Location = new System.Drawing.Point(7, 241);
+            this.DGV_AsignesTest_AllTests.Name = "DGV_AsignesTest_AllTests";
+            this.DGV_AsignesTest_AllTests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_AsignesTest_AllTests.Size = new System.Drawing.Size(706, 163);
+            this.DGV_AsignesTest_AllTests.TabIndex = 9;
+            // 
+            // DGV_AsignesTest_TestsForGroup
+            // 
+            this.DGV_AsignesTest_TestsForGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_AsignesTest_TestsForGroup.Location = new System.Drawing.Point(7, 71);
+            this.DGV_AsignesTest_TestsForGroup.Name = "DGV_AsignesTest_TestsForGroup";
+            this.DGV_AsignesTest_TestsForGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_AsignesTest_TestsForGroup.Size = new System.Drawing.Size(706, 164);
+            this.DGV_AsignesTest_TestsForGroup.TabIndex = 8;
+            // 
+            // comboBox_AsignesTest_Groups
+            // 
+            this.comboBox_AsignesTest_Groups.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox_AsignesTest_Groups.FormattingEnabled = true;
+            this.comboBox_AsignesTest_Groups.Location = new System.Drawing.Point(467, 40);
+            this.comboBox_AsignesTest_Groups.Name = "comboBox_AsignesTest_Groups";
+            this.comboBox_AsignesTest_Groups.Size = new System.Drawing.Size(246, 24);
+            this.comboBox_AsignesTest_Groups.TabIndex = 7;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label32.Location = new System.Drawing.Point(396, 43);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(51, 16);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "Group: ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(3, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(113, 20);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Asignes Test";
+            // 
+            // tabPage12
+            // 
+            this.tabPage12.Controls.Add(this.button_ShowTestsOfGroup_RemoveTest);
+            this.tabPage12.Controls.Add(this.DGV_ShowTestsOfGroup);
+            this.tabPage12.Controls.Add(this.comboBox_ShowTestsOfGroup);
+            this.tabPage12.Controls.Add(this.label33);
+            this.tabPage12.Controls.Add(this.label12);
+            this.tabPage12.Location = new System.Drawing.Point(42, 4);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Size = new System.Drawing.Size(721, 461);
+            this.tabPage12.TabIndex = 11;
+            this.tabPage12.Text = "Show tests of group";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // button_ShowTestsOfGroup_RemoveTest
+            // 
+            this.button_ShowTestsOfGroup_RemoveTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_ShowTestsOfGroup_RemoveTest.Location = new System.Drawing.Point(7, 405);
+            this.button_ShowTestsOfGroup_RemoveTest.Name = "button_ShowTestsOfGroup_RemoveTest";
+            this.button_ShowTestsOfGroup_RemoveTest.Size = new System.Drawing.Size(706, 48);
+            this.button_ShowTestsOfGroup_RemoveTest.TabIndex = 12;
+            this.button_ShowTestsOfGroup_RemoveTest.Text = "Remove Test";
+            this.button_ShowTestsOfGroup_RemoveTest.UseVisualStyleBackColor = true;
             // 
             // DGV_ShowTestsOfGroup
             // 
@@ -1356,21 +1365,25 @@
             this.label33.TabIndex = 9;
             this.label33.Text = "Group: ";
             // 
-            // button_ShowTestsOfGroup_RemoveTest
+            // label12
             // 
-            this.button_ShowTestsOfGroup_RemoveTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ShowTestsOfGroup_RemoveTest.Location = new System.Drawing.Point(7, 405);
-            this.button_ShowTestsOfGroup_RemoveTest.Name = "button_ShowTestsOfGroup_RemoveTest";
-            this.button_ShowTestsOfGroup_RemoveTest.Size = new System.Drawing.Size(706, 48);
-            this.button_ShowTestsOfGroup_RemoveTest.TabIndex = 12;
-            this.button_ShowTestsOfGroup_RemoveTest.Text = "Remove Test";
-            this.button_ShowTestsOfGroup_RemoveTest.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(3, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(178, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Show Tests of Group";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 458);
+            this.ClientSize = new System.Drawing.Size(832, 458);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.MainMenuStrip = this.menuStrip1;
@@ -1381,52 +1394,52 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowAllGroups)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
-            this.tabPage9.ResumeLayout(false);
-            this.tabPage9.PerformLayout();
-            this.tabPage10.ResumeLayout(false);
-            this.tabPage10.PerformLayout();
-            this.tabPage11.ResumeLayout(false);
-            this.tabPage11.PerformLayout();
-            this.tabPage12.ResumeLayout(false);
-            this.tabPage12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUsers)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateUsers)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowAllGroups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddGroup)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddGroup)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUserToGroup_NewGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateGroup)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUserToGroup_AllStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUserToGroup_NewGroup)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowUsersInGroup)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowUsers)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddUsers)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_UpdateUsers)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LoadTest_Hour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LoadTest_Minute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_LoadTest_Hour)).EndInit();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowAllTests)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_AsignesTest_TestsForGroup)).EndInit();
+            this.tabPage11.ResumeLayout(false);
+            this.tabPage11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_AsignesTest_AllTests)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AsignesTest_TestsForGroup)).EndInit();
+            this.tabPage12.ResumeLayout(false);
+            this.tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowTestsOfGroup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
