@@ -1,6 +1,9 @@
-﻿using System;
+﻿using DAL;
+using Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +15,12 @@ namespace TestServer
 {
     public partial class Form1 : Form
     {
+        static GenericUnitOfWork work = new GenericUnitOfWork(new Context(ConfigurationManager.ConnectionStrings["conStr"].ConnectionString));
+        IGenericRepository<User> repoUser = work.Repository<User>();
+        IGenericRepository<Group> repoGroup = work.Repository<Group>();
+        IGenericRepository<Test> repoTest = work.Repository<Test>();
+        IGenericRepository<Grade> repoGrade = work.Repository<Grade>();
+
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +50,9 @@ namespace TestServer
         private void ShowToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[0];
+
+            var bs = repoGroup.GetAllData().ToList();
+            DGV_ShowAllGroups.DataSource = bs;
         }
         private void AddToolStripMenuItem1_Click(object sender, EventArgs e)
         {
