@@ -15,17 +15,20 @@ namespace DAL
         [Required, MaxLength(50), MinLength(1)]
         public string Title { get; set; }
         [Required]
+        public string Filename { get; set; }
+        [Required]
         public int NumOfQuestions { get; set; }
 
-        public int? Time { get; set; } 
+        public int? Time { get; set; }
 
 
-        public ICollection<Group> Groups { get; set; }
-        public Test()
-        {
-            Groups = new List<Group>();
-        }
+        //public ICollection<Group> Groups { get; set; }
+        //public Test()
+        //{
+        //    Groups = new List<Group>();
+        //}
 
+        public ICollection<GroupTest> GroupTests { get; set; }
 
     }
 }

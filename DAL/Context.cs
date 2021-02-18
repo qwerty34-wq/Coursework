@@ -22,5 +22,6 @@ namespace DAL
         public DbSet<Group> Groups { get; set; }
         public DbSet<Test> Tests { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<GroupTest> GroupTests { get; set; }
     }
 }

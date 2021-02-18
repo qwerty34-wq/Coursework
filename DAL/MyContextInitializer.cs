@@ -2,7 +2,7 @@
 
 namespace DAL
 {
-    class MyContextInitializer : CreateDatabaseIfNotExists<Context>
+    class MyContextInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
         protected override void Seed(Context context)
         {

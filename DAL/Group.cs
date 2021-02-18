@@ -15,11 +15,13 @@ namespace DAL
         public string Name { get; set; }
 
         public ICollection<User> Users { get; set; }
-        public ICollection<Test> Tests { get; set; }
+        public ICollection<GroupTest> GroupTests { get; set; }
+
+        //public ICollection<Test> Tests { get; set; }
         public Group()
         {
             Users = new List<User>();
-            Tests = new List<Test>();
+            //Tests = new List<Test>();
         }
 
 

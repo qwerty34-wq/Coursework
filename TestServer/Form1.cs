@@ -8,10 +8,13 @@ using System.Data;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using TestElement;
 
 namespace TestServer
 {
@@ -22,6 +25,7 @@ namespace TestServer
         IGenericRepository<Group> repoGroup = work.Repository<Group>();
         IGenericRepository<Test> repoTest = work.Repository<Test>();
         IGenericRepository<Grade> repoGrade = work.Repository<Grade>();
+        IGenericRepository<GroupTest> repoGroupTest = work.Repository<GroupTest>();
 
         public Form1()
         {
@@ -75,52 +79,6 @@ namespace TestServer
         // Show Users
         public void ShowUsers(DataGridView dataGridView)
         {
-            //var bs = repoUser.GetAllData().Select(p => new { p.Id, p.FName, p.LName, p.Login, p.Password, p.IsAdmin }).ToList();
-
-            //var bs = repoUser.GetAllData().ToList();
-
-            //var bs = from b in repoUser.GetAllData()
-            //         join s in repoGroup.GetAllData() on b.GroupId equals s.Id
-            //         select new { UserId = b.Id, FirstName = b.FName, LastName = b.LName, UserLogin = b.Login, UserPassword = b.Password, Admin = b.IsAdmin, Group = s.Name };
-
-            //bs = bs.ToList();
-
-            //List<object> list = new List<object>();
-
-            //foreach (var user in repoUser.GetAllData())
-            //{
-            //    if (user.GroupId == null)
-            //    {
-            //        list.Add(new
-            //        {
-            //            UserId = user.Id,
-            //            FirstName = user.FName,
-            //            LastName = user.LName,
-            //            UserLogin = user.Login,
-            //            UserPassword = user.Password,
-            //            Admin = user.IsAdmin
-            //        });
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        var group = repoGroup.FindById(user.GroupId);
-
-            //        list.Add(new
-            //        {
-            //            UserId = user.Id,
-            //            FirstName = user.FName,
-            //            LastName = user.LName,
-            //            UserLogin = user.Login,
-            //            UserPassword = user.Password,
-            //            Admin = user.IsAdmin,
-            //            Group = group.Name
-            //        });
-            //    }
-
-
-            //}
-
             var bs = repoUser.GetAllData().Select(p => new { p.Id, p.FName, p.LName, p.Login, p.Password, p.IsAdmin }).ToList();
 
             dataGridView.DataSource = bs;
@@ -187,15 +145,29 @@ namespace TestServer
         {
             tabControl1.SelectedTab = tabControl1.TabPages[3];
 
-            //var groups = repoGroup.GetAllData().ToList();
-            //foreach (var item in collection)
-            //{
+            comboBox_AddUserToGroup.Items.Clear();
 
-            //}
+            var groups = repoGroup.GetAllData().ToList();
+            foreach (var t in groups)
+            {
+                comboBox_AddUserToGroup.Items.Add(t.Name);
+            }
+
+            ShowUsers(DGV_AddUserToGroup_AllStudents);
         }
         private void ShowUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[4];
+
+            comboBox_ShowUsersInGroup.Items.Clear();
+
+            var groups = repoGroup.GetAllData().ToList();
+            foreach (var t in groups)
+            {
+                comboBox_ShowUsersInGroup.Items.Add(t.Name);
+            }
+
+            
         }
 
         // Users
@@ -227,14 +199,43 @@ namespace TestServer
         private void ShowAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[9];
+
+            var bs = repoTest.GetAllData().Select(t => new { Id = t.Id, Author = t.Author, Title = t.Title, Filename = t.Filename, NumOfQuestions = t.NumOfQuestions, TimeInMinutes = t.Time });
+            DGV_ShowAllTests.DataSource = bs.ToList();
         }
         private void AsignesTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[10];
+
+            DGV_AsignesTest_TestsForGroup.DataSource = null;
+            DGV_AsignesTest_TestsForGroup.Rows.Clear();
+
+            comboBox_AsignesTest_Groups.Items.Clear();
+
+            var groups = repoGroup.GetAllData().ToList();
+            foreach (var t in groups)
+            {
+                comboBox_AsignesTest_Groups.Items.Add(t.Name);
+            }
+
+            var bs = repoTest.GetAllData().Select(t => new { Id = t.Id, Author = t.Author, Title = t.Title, Filename = t.Filename, NumOfQuestions = t.NumOfQuestions, TimeInMinutes = t.Time });
+            DGV_AsignesTest_AllTests.DataSource = bs.ToList();
         }
         private void ShowTestsOfGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[11];
+
+            DGV_ShowTestsOfGroup.DataSource = null;
+            DGV_ShowTestsOfGroup.Rows.Clear();
+
+            comboBox_ShowTestsOfGroup.Items.Clear();
+
+            var groups = repoGroup.GetAllData().ToList();
+            foreach (var t in groups)
+            {
+                comboBox_ShowTestsOfGroup.Items.Add(t.Name);
+            }
+
         }
 
 
@@ -329,6 +330,85 @@ namespace TestServer
             CheckButton(button_UpdateGroup, textBox_UpdateGroup_NewName);
         }
 
+
+        private void ComboBox_AddUserToGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_AddUserToGroup.SelectedItem.ToString()).Id;
+
+            var bs = repoUser.GetAllData().Where(t => t.GroupId == groupId).Select(t => new { Id = t.Id, FName = t.FName, LName = t.LName, Login = t.Login, Password = t.Password,
+            IsAdmin = t.IsAdmin, GroupId = t.GroupId});
+
+            DGV_AddUserToGroup_NewGroup.DataSource = bs.ToList();
+        }
+
+        private void Button_AddUserToGroup_Click(object sender, EventArgs e)
+        {
+            var userId = DGV_AddUserToGroup_AllStudents.SelectedRows[0].Cells["Id"].Value;
+            var groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_AddUserToGroup.SelectedItem.ToString()).Id;
+
+            //
+            //var admins_group = repoGroup.FirstOrDefault(t => t.Name == "admins_group");
+            //
+
+
+            var user = repoUser.FindById(userId);
+            user.GroupId = groupId;
+
+            //
+            //if (admins_group.Id == groupId)
+            //{
+            //    user.IsAdmin = true;
+            //}
+            //
+
+            repoUser.Update(user);
+
+
+            var bs = repoUser.GetAllData().Where(t => t.GroupId == groupId).Select(t => new { Id = t.Id, FName = t.FName, LName = t.LName, Login = t.Login,
+                Password = t.Password, IsAdmin = t.IsAdmin, GroupId = t.GroupId });
+
+            DGV_AddUserToGroup_NewGroup.DataSource = bs.ToList();
+        }
+
+        private void ComboBox_ShowUsersInGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+  
+            var groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_ShowUsersInGroup.SelectedItem.ToString()).Id;
+
+            var bs = repoUser.GetAllData().Where(t => t.GroupId == groupId).Select(t => new {
+                Id = t.Id,
+                FName = t.FName,
+                LName = t.LName,
+                Login = t.Login,
+                Password = t.Password,
+                IsAdmin = t.IsAdmin,
+                GroupId = t.GroupId
+            });
+
+            DGV_ShowUsersInGroup.DataSource = bs.ToList();
+        }
+
+        private void Button_ShowUsersInGroup_RemoveStudent_Click(object sender, EventArgs e)
+        {
+            var userId = DGV_ShowUsersInGroup.SelectedRows[0].Cells["Id"].Value;
+            var user = repoUser.FindById(userId);
+            user.GroupId = null;
+            repoUser.Update(user);
+
+
+            var groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_ShowUsersInGroup.SelectedItem.ToString()).Id;
+            var bs = repoUser.GetAllData().Where(t => t.GroupId == groupId).Select(t => new {
+                Id = t.Id,
+                FName = t.FName,
+                LName = t.LName,
+                Login = t.Login,
+                Password = t.Password,
+                IsAdmin = t.IsAdmin,
+                GroupId = t.GroupId
+            });
+
+            DGV_ShowUsersInGroup.DataSource = bs.ToList();
+        }
 
 
 
@@ -485,5 +565,245 @@ namespace TestServer
             repoUser.Update(_user);
             ShowUsers(DGV_UpdateUsers);
         }
+
+
+
+
+
+        // Tests
+
+        string path = string.Empty;
+        string filename = string.Empty;
+
+        private void Button_LoadTest_File_Click(object sender, EventArgs e)
+        {
+            //openFileDialog1.DefaultExt = "*.xml";
+
+            openFileDialog1.Filter = "Xml files (*.xml)|*.xml";
+
+            openFileDialog1.Title = "Upload File";
+            DialogResult res = openFileDialog1.ShowDialog();
+
+            if (res == DialogResult.Cancel)
+                return;
+
+            path = openFileDialog1.FileName;
+            filename = openFileDialog1.SafeFileName;
+
+            if (Directory.Exists("UploadedFiles"))
+            {
+                if (File.Exists($@"UploadedFiles\{filename}"))
+                {
+                    MessageBox.Show("There are already such test", "Server Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    path = string.Empty;
+                    filename = string.Empty;
+
+                    return;
+                }
+            }
+
+
+            //string destFile = $@"UploadedFiles\{filename}";
+
+
+            XmlSerializer formatter = new XmlSerializer(typeof(Data));
+            Data data = new Data();
+
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                data = (Data)formatter.Deserialize(fs);
+            }
+
+            textBox_LoadTest_Author.Text = data.Author;
+            textBox_LoadTest_NameOfTest.Text = data.Title;
+            textBox_LoadTest_NumOfQuestions.Text = data.Tests.Count().ToString();
+        }
+
+        private void Button_LoadTest_SaveTest_Click(object sender, EventArgs e)
+        {
+            if (path == string.Empty || filename == string.Empty)
+            {
+                MessageBox.Show("Select file first", "Server Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Directory.Exists("UploadedFiles"))
+            {
+                Directory.CreateDirectory("UploadedFiles");
+            }
+
+            string destFile = $@"UploadedFiles\{filename}";
+
+            File.Copy(path, destFile);
+
+            int hours = Convert.ToInt32(numericUpDown_LoadTest_Hour.Value);
+            int minutes = Convert.ToInt32(numericUpDown_LoadTest_Minute.Value);
+
+            int min_in_hours = hours * 60;
+
+            int total_time = min_in_hours + minutes;
+
+            Test test = new Test()
+            {
+                Author = textBox_LoadTest_Author.Text,
+                Title = textBox_LoadTest_NameOfTest.Text,
+                NumOfQuestions = Convert.ToInt32(textBox_LoadTest_NumOfQuestions.Text),
+                Filename = filename,
+                Time = total_time
+            };
+
+            repoTest.Add(test);
+
+            textBox_LoadTest_Author.Clear();
+            textBox_LoadTest_NameOfTest.Clear();
+            textBox_LoadTest_NumOfQuestions.Clear();
+            numericUpDown_LoadTest_Hour.Value = 0;
+            numericUpDown_LoadTest_Minute.Value = 1;
+
+            path = string.Empty;
+            filename = string.Empty;
+        }
+
+        private void Button_LoadTest_CancelTest_Click(object sender, EventArgs e)
+        {
+            textBox_LoadTest_Author.Clear();
+            textBox_LoadTest_NameOfTest.Clear();
+            textBox_LoadTest_NumOfQuestions.Clear();
+            numericUpDown_LoadTest_Hour.Value = 0;
+            numericUpDown_LoadTest_Minute.Value = 1;
+
+            path = string.Empty;
+            filename = string.Empty;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            var testId = Convert.ToInt32(DGV_ShowAllTests.SelectedRows[0].Cells["Id"].Value);
+
+            var test = repoTest.FindById(testId);
+
+            File.Delete($@"UploadedFiles\{test.Filename}");
+
+            repoTest.Remove(test);
+
+            var res = repoGroupTest.FindAll(t => t.TestId == testId).ToList();
+            foreach (var t in res)
+            {
+                repoGroupTest.Remove(t);
+            }
+
+            var bs = repoTest.GetAllData().Select(t => new { Id = t.Id, Author = t.Author, Title = t.Title, Filename = t.Filename, NumOfQuestions = t.NumOfQuestions, TimeInMinutes = t.Time });
+            DGV_ShowAllTests.DataSource = bs.ToList();
+        }
+
+        private void ComboBox_AsignesTest_Groups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_AsignesTest_Groups.SelectedItem.ToString()).Id;
+            var group = repoGroup.FindById(groupId);
+
+            var bs = from g in repoGroup.GetAllData()
+                     join gt in repoGroupTest.GetAllData() on g.Id equals gt.GroupId
+                     join t in repoTest.GetAllData() on gt.TestId equals t.Id
+                     where g.Id == groupId
+                     select new { GroupName = g.Name, Author = t.Author, Title = t.Title, NumOfQuestions = t.NumOfQuestions, Time = t.Time };
+
+            DGV_AsignesTest_TestsForGroup.DataSource = bs.ToList();
+        }
+
+        private void Button_AsignesTest_AddTest_Click(object sender, EventArgs e)
+        {
+            var testId = Convert.ToInt32(DGV_AsignesTest_AllTests.SelectedRows[0].Cells["Id"].Value);
+            int groupId;
+            try
+            {
+                groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_AsignesTest_Groups.SelectedItem.ToString()).Id;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Сhoose group first!", "Server Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            GroupTest groupTest = new GroupTest() { GroupId = groupId, TestId = testId };
+
+            var res = repoGroupTest.FirstOrDefault(t => t.GroupId == groupId && t.TestId == testId);
+            if (res != null)
+            {
+                MessageBox.Show("You assigned this test once for this group", "Server Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            repoGroupTest.Add(new GroupTest() { GroupId = groupId, TestId = testId });
+
+            var bs = from g in repoGroup.GetAllData()
+                     join gt in repoGroupTest.GetAllData() on g.Id equals gt.GroupId
+                     join t in repoTest.GetAllData() on gt.TestId equals t.Id
+                     where g.Id == groupId
+                     select new { GroupName = g.Name, Author = t.Author, Title = t.Title, NumOfQuestions = t.NumOfQuestions, Time = t.Time };
+
+            DGV_AsignesTest_TestsForGroup.DataSource = bs.ToList();
+        }
+
+        private void ComboBox_ShowTestsOfGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_ShowTestsOfGroup.SelectedItem.ToString()).Id;
+
+            var bs = from g in repoGroup.GetAllData()
+                     join gt in repoGroupTest.GetAllData() on g.Id equals gt.GroupId
+                     join t in repoTest.GetAllData() on gt.TestId equals t.Id
+                     where g.Id == groupId
+                     select new { GroupName = g.Name, Author = t.Author, Title = t.Title, NumOfQuestions = t.NumOfQuestions, Time = t.Time };
+
+            DGV_ShowTestsOfGroup.DataSource = bs.ToList();
+        }
+
+        private void Button_ShowTestsOfGroup_RemoveTest_Click(object sender, EventArgs e)
+        {
+            int groupId;
+            try
+            {
+                groupId = repoGroup.FirstOrDefault(t => t.Name == comboBox_ShowTestsOfGroup.SelectedItem.ToString()).Id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("First select group", "Server Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string author;
+            string title;
+            try
+            {
+                author = DGV_ShowTestsOfGroup.SelectedRows[0].Cells["Author"].Value.ToString();
+                title = DGV_ShowTestsOfGroup.SelectedRows[0].Cells["Title"].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("There are no tests", "Server Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var testId = repoTest.FirstOrDefault(t => t.Author == author && t.Title == title).Id;
+
+            var res = repoGroupTest.FindAll(t => t.TestId == testId).ToList();
+            foreach (var t in res)
+            {
+                repoGroupTest.Remove(t);
+            }
+
+            var bs = from g in repoGroup.GetAllData()
+                     join gt in repoGroupTest.GetAllData() on g.Id equals gt.GroupId
+                     join t in repoTest.GetAllData() on gt.TestId equals t.Id
+                     where g.Id == groupId
+                     select new { GroupName = g.Name, Author = t.Author, Title = t.Title, NumOfQuestions = t.NumOfQuestions, Time = t.Time };
+
+            DGV_ShowTestsOfGroup.DataSource = bs.ToList();
+
+        }
     }
+
+
+
+
 }
