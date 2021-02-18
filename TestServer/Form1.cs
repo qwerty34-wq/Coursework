@@ -11,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -27,13 +28,33 @@ namespace TestServer
         IGenericRepository<Grade> repoGrade = work.Repository<Grade>();
         IGenericRepository<GroupTest> repoGroupTest = work.Repository<GroupTest>();
 
+        int n = 0;
+
         public Form1()
         {
             InitializeComponent();
 
             tabControl1.SelectedTab = tabControl1.TabPages[0];
 
-            //var bs = repoGroup.GetAllData().ToList();
+            //
+            while (true)
+            {
+                Form2 form = new Form2();
+                DialogResult res = form.ShowDialog();
+
+                if (res == DialogResult.Cancel)
+                {
+                    n = 1;
+                    break;
+                }
+
+                var user = repoUser.FirstOrDefault(t => t.Login == form.textBox1.Text && t.Password == form.textBox2.Text && t.IsAdmin == true);
+
+                if (user != null)
+                    break;
+            }
+            //
+
             ShowGroups(DGV_ShowAllGroups);
         }
 
@@ -238,6 +259,13 @@ namespace TestServer
 
         }
 
+        // Results
+        private void ServerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabControl1.TabPages[12];
+        }
+
+
 
         //
         //
@@ -245,7 +273,7 @@ namespace TestServer
         //
         //
 
-        
+
         // Groups
 
         private void Button_AddGroup_Click(object sender, EventArgs e)
@@ -787,9 +815,10 @@ namespace TestServer
             var testId = repoTest.FirstOrDefault(t => t.Author == author && t.Title == title).Id;
 
             var res = repoGroupTest.FindAll(t => t.TestId == testId).ToList();
-            foreach (var t in res)
+
+            for (int i = 0; i < res.Count(); i++)
             {
-                repoGroupTest.Remove(t);
+                repoGroupTest.Remove(res[i]);
             }
 
             var bs = from g in repoGroup.GetAllData()
@@ -801,9 +830,19 @@ namespace TestServer
             DGV_ShowTestsOfGroup.DataSource = bs.ToList();
 
         }
+
+
+
+
+        // Form
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (n == 1)
+            {
+                Application.Exit();
+            }
+        }
+
+        
     }
-
-
-
-
 }
