@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestElement
+namespace TestClient
 {
-    [Serializable]
-    public class TestElem
+    public class TestAnsws
     {
         public string Question { get; set; }
-        public List<string> Answers { get; set; }
-        public string CorectAnswer { get; set; }
+        public bool IsAnswerCorect { get; set; }
+
     }
 }

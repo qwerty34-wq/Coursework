@@ -146,6 +146,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.DGV_Results = new System.Windows.Forms.DataGridView();
+            this.label34 = new System.Windows.Forms.Label();
+            this.button_Results = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -180,6 +183,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_AsignesTest_TestsForGroup)).BeginInit();
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowTestsOfGroup)).BeginInit();
+            this.tabPage13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Results)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -193,7 +198,7 @@
             this.serverToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(63, 464);
+            this.menuStrip1.Size = new System.Drawing.Size(63, 467);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -337,11 +342,11 @@
             this.tabControl1.Controls.Add(this.tabPage11);
             this.tabControl1.Controls.Add(this.tabPage12);
             this.tabControl1.Controls.Add(this.tabPage13);
-            this.tabControl1.Location = new System.Drawing.Point(66, 0);
+            this.tabControl1.Location = new System.Drawing.Point(20, 0);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(767, 469);
+            this.tabControl1.Size = new System.Drawing.Size(768, 469);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -533,7 +538,7 @@
             this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Location = new System.Drawing.Point(42, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(721, 461);
+            this.tabPage4.Size = new System.Drawing.Size(722, 461);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Add user to Group";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1399,6 +1404,9 @@
             // 
             // tabPage13
             // 
+            this.tabPage13.Controls.Add(this.button_Results);
+            this.tabPage13.Controls.Add(this.label34);
+            this.tabPage13.Controls.Add(this.DGV_Results);
             this.tabPage13.Location = new System.Drawing.Point(42, 4);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Size = new System.Drawing.Size(721, 461);
@@ -1410,11 +1418,41 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // DGV_Results
+            // 
+            this.DGV_Results.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Results.Location = new System.Drawing.Point(3, 39);
+            this.DGV_Results.Name = "DGV_Results";
+            this.DGV_Results.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Results.Size = new System.Drawing.Size(715, 366);
+            this.DGV_Results.TabIndex = 0;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.Location = new System.Drawing.Point(5, 9);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(63, 20);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "Results";
+            // 
+            // button_Results
+            // 
+            this.button_Results.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_Results.Location = new System.Drawing.Point(0, 411);
+            this.button_Results.Name = "button_Results";
+            this.button_Results.Size = new System.Drawing.Size(718, 46);
+            this.button_Results.TabIndex = 2;
+            this.button_Results.Text = "Refresh";
+            this.button_Results.UseVisualStyleBackColor = true;
+            this.button_Results.Click += new System.EventHandler(this.Button_Results_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 464);
+            this.ClientSize = new System.Drawing.Size(788, 467);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.MainMenuStrip = this.menuStrip1;
@@ -1474,6 +1512,9 @@
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ShowTestsOfGroup)).EndInit();
+            this.tabPage13.ResumeLayout(false);
+            this.tabPage13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Results)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1599,6 +1640,9 @@
         private System.Windows.Forms.ComboBox comboBox_ShowTestsOfGroup;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TabPage tabPage13;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.DataGridView DGV_Results;
+        private System.Windows.Forms.Button button_Results;
     }
 }
 

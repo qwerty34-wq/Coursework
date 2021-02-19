@@ -13,7 +13,7 @@ namespace InfoLib
     {
         public string MSG { get; set; }
         public Data Data { get; set; }
-        public DBTestData DBTestData { get; set; }
+        public List<DBTestData> DBTestData { get; set; }
         public DBUserData DBUserData { get; set; }
         public IPEndPoint remoteEP { get; set; }
     }

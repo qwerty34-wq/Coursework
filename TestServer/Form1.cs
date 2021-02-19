@@ -57,7 +57,6 @@ namespace TestServer
         private UnicodeEncoding encoding = new UnicodeEncoding();
         //
         //
-
         int n = 0;
 
         public Form1()
@@ -165,6 +164,9 @@ namespace TestServer
 
                         var groupP = repoGroup.FindById(user.GroupId);
 
+                        if (groupP == null)
+                            return;
+
                         var bs = from g in repoGroup.GetAllData()
                                  join gt in repoGroupTest.GetAllData() on g.Id equals gt.GroupId
                                  join t in repoTest.GetAllData() on gt.TestId equals t.Id
@@ -177,20 +179,87 @@ namespace TestServer
                         inf.DBUserData = new DBUserData() { FName = groupP.Name };
                         inf.Data = null;
 
-                        bs = bs.ToList();
+                        inf.DBTestData = new List<DBTestData>();
 
                         foreach (var t in bs)
                         {
-                            inf.DBTestData = null;
                             var test = repoTest.FirstOrDefault(m => m.Author == t.Author && m.Title == t.Title);
-                            inf.DBTestData = new DBTestData() { Author = t.Author, Filename = test.Filename,
+                            DBTestData data = new DBTestData() { Author = t.Author, Filename = test.Filename,
                                 Id = test.Id, NumOfQuestions = t.NumOfQuestions, Title = t.Title, Time = t.Time };
 
-                            SenderData(inf);
+                            inf.DBTestData.Add(data);
+                            
                         }
-                        
-                    }
 
+                        SenderData(inf);
+                    }
+                    else if (info.MSG == "PASS_TEST")
+                    {
+
+                        var selectedTest = repoTest.FindById(info.TestId);
+
+                        XmlSerializer formatter = new XmlSerializer(typeof(Data));
+
+                        Data data = new Data();
+
+                        using (FileStream fs = new FileStream($@"UploadedFiles\{selectedTest.Filename}", FileMode.Open))
+                        {
+                            data = (Data)formatter.Deserialize(fs);
+                        }
+
+                        Info d = new Info();
+                        d.MSG = "RETURN_TEST";
+
+                        d.Data = new Data();
+
+                        d.Data = data;
+                        d.remoteEP = remoteEP;
+
+                        d.DBTestData = new List<DBTestData>();
+                        d.DBTestData.Add(new DBTestData() { Id = selectedTest.Id, Author = selectedTest.Author, Filename = selectedTest.Filename,
+                         NumOfQuestions = selectedTest.NumOfQuestions, Title = selectedTest.Title, Time = selectedTest.Time});
+
+                        SenderData(d);
+
+                    }
+                    else if (info.MSG == "TEST_PASSED_DATA")
+                    {
+                        var gr = repoGrade.FirstOrDefault(t => t.UserId == info.UserId && t.TestId == info.TestId);
+
+                        if (gr != null)
+                        {
+
+
+                            if (info.UserId.HasValue)
+                                gr.UserId = info.UserId.Value;
+
+                            if (info.TestId.HasValue)
+                                gr.TestId = info.TestId.Value;
+
+                            if (info.TestMark.HasValue)
+                                gr.Mark = info.TestMark.Value;
+
+                            repoGrade.Update(gr);
+                        }
+                        else
+                        {
+                            Grade grade = new Grade();
+
+                            if (info.UserId.HasValue)
+                                grade.UserId = info.UserId.Value;
+
+                            if (info.TestId.HasValue)
+                                grade.TestId = info.TestId.Value;
+
+                            if (info.TestMark.HasValue)
+                                grade.Mark = info.TestMark.Value;
+
+
+                            repoGrade.Add(grade);
+                        }
+
+
+                    }
 
                 }
             }
@@ -332,6 +401,9 @@ namespace TestServer
         {
             tabControl1.SelectedTab = tabControl1.TabPages[3];
 
+            DGV_AddUserToGroup_NewGroup.DataSource = null;
+            DGV_AddUserToGroup_NewGroup.Rows.Clear();
+
             comboBox_AddUserToGroup.Items.Clear();
 
             var groups = repoGroup.GetAllData().ToList();
@@ -345,6 +417,9 @@ namespace TestServer
         private void ShowUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[4];
+
+            DGV_ShowUsersInGroup.DataSource = null;
+            DGV_ShowUsersInGroup.Rows.Clear();
 
             comboBox_ShowUsersInGroup.Items.Clear();
 
@@ -429,8 +504,27 @@ namespace TestServer
         private void ServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[12];
+
+            var bs = from g in repoGrade.GetAllData()
+                     join u in repoUser.GetAllData() on g.UserId equals u.Id
+                     join gr in repoGroup.GetAllData() on u.GroupId equals gr.Id
+                     join t in repoTest.GetAllData() on g.TestId equals t.Id
+                     select new { UserId = u.Id, FName = u.FName, LName = u.LName, UserLogin = u.Login, Group = gr.Name, TestTitle = t.Title, TestAuthor = t.Author, MarkInPercent = g.Mark  };
+
+            DGV_Results.DataSource = bs.ToList();
+
         }
 
+        private void Button_Results_Click(object sender, EventArgs e)
+        {
+            var bs = from g in repoGrade.GetAllData()
+                     join u in repoUser.GetAllData() on g.UserId equals u.Id
+                     join gr in repoGroup.GetAllData() on u.GroupId equals gr.Id
+                     join t in repoTest.GetAllData() on g.TestId equals t.Id
+                     select new { UserId = u.Id, FName = u.FName, LName = u.LName, UserLogin = u.Login, Group = gr.Name, TestTitle = t.Title, TestAuthor = t.Author, MarkInPercent = g.Mark };
+
+            DGV_Results.DataSource = bs.ToList();
+        }
 
 
         //
@@ -1018,5 +1112,7 @@ namespace TestServer
         {
             SendMSG("EXIT");
         }
+
+
     }
 }

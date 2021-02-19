@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestElement;
 
 namespace TestClient
 {
@@ -50,6 +51,9 @@ namespace TestClient
         int USER_ID;
         int? GROUP_ID;
         string GROUP_NAME = string.Empty;
+
+        int testPassed = 0;
+        int noGroup = 0;
 
         List<DBTestData> dBTestDataList = new List<DBTestData>();
 
@@ -97,7 +101,9 @@ namespace TestClient
                 else
                 {
                     MSG_SEND("CONNECT", form.textBox1.Text, form.textBox2.Text);
-                    Thread.Sleep(5000);
+                    //
+                    Thread.Sleep(2000);
+                    //
 
                     if (GiveAccess)
                     {
@@ -133,6 +139,13 @@ namespace TestClient
 
                         USER_ID = info.DBUserData.Id;
                         GROUP_ID = info.DBUserData.GroupId;
+
+                        if (GROUP_ID == null && noGroup == 0)
+                        {
+                            MessageBox.Show("Admin should first add you to the group!\nThen restart app", "ClientAlert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            noGroup = 1;
+                        }
+                        
                     }
                     else if (info.MSG == "EXIT")
                     {
@@ -150,16 +163,7 @@ namespace TestClient
                             }));
                         }
 
-
-                        foreach (var item in dBTestDataList)
-                        {
-                            if (item.Id == info.DBTestData.Id)
-                            {
-                                return;
-                            }
-                        }
-
-                        dBTestDataList.Add(info.DBTestData);
+                        dBTestDataList = info.DBTestData;
 
                         Invoke(new Action(() =>
                         {
@@ -168,6 +172,80 @@ namespace TestClient
                             dataGridView1.DataSource = dBTestDataList;
                         }));
                         
+                    }
+                    else if(info.MSG == "RETURN_TEST")
+                    {
+                        if (testPassed == 1)
+                        {
+                            continue;
+                        }
+
+                        Data data = info.Data;
+
+                        List<TestAnsws> answs = new List<TestAnsws>();
+
+                        for (int i = 0; i < data.Tests.Count(); i++)
+                        {
+
+                            FormPassTest form = new FormPassTest();
+                            form.groupBox1.Text = $"{i+1} || {data.Tests.Count()}";
+                            form.textBox1.Text = data.Tests[i].Question;
+
+                            for (int j = 0; j < data.Tests[i].Answers.Count(); j++)
+                            {
+                                form.listBox1.Items.Add(data.Tests[i].Answers[j]);
+                            }
+
+                            DialogResult res = form.ShowDialog();
+
+                            if (res == DialogResult.OK)
+                            {
+                                
+                                if (form.listBox1.SelectedItem.ToString() == data.Tests[i].CorectAnswer)
+                                {
+                                    answs.Add(new TestAnsws() { Question = data.Tests[i].Question, IsAnswerCorect = true });
+                                }
+                                else
+                                {
+                                    answs.Add(new TestAnsws() { Question = data.Tests[i].Question, IsAnswerCorect = false });
+                                }
+
+                            }
+
+                            
+                        }
+
+                        var trueAswers = answs.Where(t => t.IsAnswerCorect == true).Count();
+                        var totalAnswers = data.Tests.Count();
+
+                        double ress = 0;
+                        try
+                        {
+                            ress = (trueAswers * 100) / totalAnswers;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("ERROR", "ClientAlert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        var mark = Convert.ToInt32(ress);
+
+                        MessageBox.Show($"Your mark is: {mark}%", "TestClient", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        InfoLibClientSendClass inf = new InfoLibClientSendClass();
+                        inf.MSG = "TEST_PASSED_DATA";
+                        inf.GroupId = GROUP_ID;
+                        inf.UserId = USER_ID;
+                        inf.TestId = info.DBTestData[0].Id;
+                        inf.TestMark = mark;
+                        inf.remoteEP = remoteEP_2;
+
+                        SenderDataClient(inf);
+
+
+
+                        testPassed = 1;
+
                     }
                 }
             }
@@ -231,6 +309,26 @@ namespace TestClient
         private void Button2_Click(object sender, EventArgs e)
         {
             SEND_MESSAGE("LOAD_TESTS", LOGIN);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                testPassed = 0;
+                var testId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Id"].Value);
+
+                InfoLibClientSendClass info = new InfoLibClientSendClass();
+                info.MSG = "PASS_TEST";
+                info.remoteEP = remoteEP_2;
+                info.TestId = testId;
+                info.UserId = USER_ID;
+                SenderDataClient(info);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR", "ClientAlert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
