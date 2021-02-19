@@ -144,8 +144,8 @@
             this.comboBox_ShowTestsOfGroup = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -193,7 +193,7 @@
             this.serverToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 464);
+            this.menuStrip1.Size = new System.Drawing.Size(63, 464);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -317,7 +317,7 @@
             // serverToolStripMenuItem
             // 
             this.serverToolStripMenuItem.Name = "serverToolStripMenuItem";
-            this.serverToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.serverToolStripMenuItem.Size = new System.Drawing.Size(50, 19);
             this.serverToolStripMenuItem.Text = "Results";
             this.serverToolStripMenuItem.Click += new System.EventHandler(this.ServerToolStripMenuItem_Click);
             // 
@@ -380,10 +380,10 @@
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.DGV_AddGroup);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(23, 4);
+            this.tabPage2.Location = new System.Drawing.Point(42, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(740, 461);
+            this.tabPage2.Size = new System.Drawing.Size(721, 461);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -455,9 +455,9 @@
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.DGV_UpdateGroup);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(23, 4);
+            this.tabPage3.Location = new System.Drawing.Point(42, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(740, 461);
+            this.tabPage3.Size = new System.Drawing.Size(721, 461);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Update";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -531,9 +531,9 @@
             this.tabPage4.Controls.Add(this.DGV_AddUserToGroup_NewGroup);
             this.tabPage4.Controls.Add(this.comboBox_AddUserToGroup);
             this.tabPage4.Controls.Add(this.label4);
-            this.tabPage4.Location = new System.Drawing.Point(23, 4);
+            this.tabPage4.Location = new System.Drawing.Point(42, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(740, 461);
+            this.tabPage4.Size = new System.Drawing.Size(721, 461);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Add user to Group";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -594,9 +594,9 @@
             this.tabPage5.Controls.Add(this.comboBox_ShowUsersInGroup);
             this.tabPage5.Controls.Add(this.DGV_ShowUsersInGroup);
             this.tabPage5.Controls.Add(this.label5);
-            this.tabPage5.Location = new System.Drawing.Point(23, 4);
+            this.tabPage5.Location = new System.Drawing.Point(42, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(740, 461);
+            this.tabPage5.Size = new System.Drawing.Size(721, 461);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Show Users";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -656,9 +656,9 @@
             // 
             this.tabPage6.Controls.Add(this.DGV_ShowUsers);
             this.tabPage6.Controls.Add(this.label6);
-            this.tabPage6.Location = new System.Drawing.Point(23, 4);
+            this.tabPage6.Location = new System.Drawing.Point(42, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(740, 461);
+            this.tabPage6.Size = new System.Drawing.Size(721, 461);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Show";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -687,9 +687,9 @@
             this.tabPage7.Controls.Add(this.groupBox1);
             this.tabPage7.Controls.Add(this.DGV_AddUsers);
             this.tabPage7.Controls.Add(this.label7);
-            this.tabPage7.Location = new System.Drawing.Point(23, 4);
+            this.tabPage7.Location = new System.Drawing.Point(42, 4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(740, 461);
+            this.tabPage7.Size = new System.Drawing.Size(721, 461);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Add";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -853,9 +853,9 @@
             this.tabPage8.Controls.Add(this.groupBox2);
             this.tabPage8.Controls.Add(this.DGV_UpdateUsers);
             this.tabPage8.Controls.Add(this.label8);
-            this.tabPage8.Location = new System.Drawing.Point(23, 4);
+            this.tabPage8.Location = new System.Drawing.Point(42, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(740, 461);
+            this.tabPage8.Size = new System.Drawing.Size(721, 461);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Update";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1397,10 +1397,6 @@
             this.label12.TabIndex = 5;
             this.label12.Text = "Show Tests of Group";
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // tabPage13
             // 
             this.tabPage13.Location = new System.Drawing.Point(42, 4);
@@ -1409,6 +1405,10 @@
             this.tabPage13.TabIndex = 12;
             this.tabPage13.Text = "Results";
             this.tabPage13.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -1420,6 +1420,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

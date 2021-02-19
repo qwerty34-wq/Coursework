@@ -1,4 +1,6 @@
 ﻿using DAL;
+using InfoLib;
+using InfoLibClientSend;
 using Repository;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,9 @@ using System.Data.Entity.Validation;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,11 +33,63 @@ namespace TestServer
         IGenericRepository<Grade> repoGrade = work.Repository<Grade>();
         IGenericRepository<GroupTest> repoGroupTest = work.Repository<GroupTest>();
 
+        //
+        // Передача даних 
+        private UdpClient client;
+
+        // Приймання даних 
+        private UdpClient client_2;
+
+        private IPAddress groubAddress;
+        private IPAddress groubAddress_2;
+
+        private int localPort;
+        private int localPort_2;
+
+        private int remotePort;
+        private int remotePort_2;
+
+        private int ttl;
+
+        private IPEndPoint remoteEP;
+        private IPEndPoint remoteEP_2;
+
+        private UnicodeEncoding encoding = new UnicodeEncoding();
+        //
+        //
+
         int n = 0;
 
         public Form1()
         {
             InitializeComponent();
+
+            //
+            //
+            //
+            groubAddress = IPAddress.Parse("234.5.5.11");
+            groubAddress_2 = IPAddress.Parse("234.5.5.15");
+
+
+            localPort = 7777;
+            localPort_2 = 8777;
+
+            remotePort = 7778;
+            remotePort_2 = 8778;
+
+            ttl = 32;
+
+            client = new UdpClient(localPort);
+            client.JoinMulticastGroup(groubAddress, ttl);
+
+            client_2 = new UdpClient(localPort_2);
+            client_2.JoinMulticastGroup(groubAddress_2, ttl);
+
+            remoteEP = new IPEndPoint(groubAddress, remotePort);
+            remoteEP_2 = new IPEndPoint(groubAddress_2, remotePort_2);
+            //
+            //
+            //
 
             tabControl1.SelectedTab = tabControl1.TabPages[0];
 
@@ -57,6 +114,115 @@ namespace TestServer
 
             ShowGroups(DGV_ShowAllGroups);
         }
+
+
+        private void Listener()
+        {
+            while (true)
+            {
+                IPEndPoint ep = null;
+                byte[] mas = client_2.Receive(ref ep);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    ms.Write(mas, 0, mas.Length);
+                    ms.Seek(0, SeekOrigin.Begin);
+
+                    InfoLibClientSendClass info = (InfoLibClientSendClass)bf.Deserialize(ms);
+
+                    if(info.MSG == "CONNECT")
+                    {
+                        var user = repoUser.FirstOrDefault(t => t.Login == info.Login && t.Password == info.Password);
+
+                        Info inf = new Info();
+
+                        if (user == null)
+                        {
+                            inf.MSG = "CONNECTED_FALSE";
+                            inf.Data = null;
+                            inf.DBTestData = null;
+                            inf.DBUserData = null;
+                            inf.remoteEP = remoteEP;
+                            SenderData(inf);
+                        }
+                        else
+                        {
+                            inf.MSG = "CONNECTED_TRUE";
+                            inf.Data = null;
+                            inf.DBTestData = null;
+                            inf.DBUserData = new DBUserData() { Id = user.Id, FName = user.FName, LName = user.LName, GroupId = user.GroupId };
+                            inf.remoteEP = remoteEP;
+                            SenderData(inf);
+                        }
+
+                    }
+                    else if(info.MSG == "LOAD_TESTS")
+                    {
+                        var user = repoUser.FirstOrDefault(t => t.Login == info.Login);
+
+                        if (user == null)
+                            return;
+
+                        var groupP = repoGroup.FindById(user.GroupId);
+
+                        var bs = from g in repoGroup.GetAllData()
+                                 join gt in repoGroupTest.GetAllData() on g.Id equals gt.GroupId
+                                 join t in repoTest.GetAllData() on gt.TestId equals t.Id
+                                 where g.Id == groupP.Id
+                                 select new { GroupName = g.Name, Author = t.Author, Title = t.Title, NumOfQuestions = t.NumOfQuestions, Time = t.Time };
+
+                        Info inf = new Info();
+                        inf.MSG = "LOAD_TESTS_TRUE";
+                        inf.remoteEP = remoteEP;
+                        inf.DBUserData = new DBUserData() { FName = groupP.Name };
+                        inf.Data = null;
+
+                        bs = bs.ToList();
+
+                        foreach (var t in bs)
+                        {
+                            inf.DBTestData = null;
+                            var test = repoTest.FirstOrDefault(m => m.Author == t.Author && m.Title == t.Title);
+                            inf.DBTestData = new DBTestData() { Author = t.Author, Filename = test.Filename,
+                                Id = test.Id, NumOfQuestions = t.NumOfQuestions, Title = t.Title, Time = t.Time };
+
+                            SenderData(inf);
+                        }
+                        
+                    }
+
+
+                }
+            }
+        }
+
+        private void SenderData(object obj)
+        {
+            Info info = obj as Info;
+
+            BinaryFormatter bf = new BinaryFormatter();
+
+            byte[] data = null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bf.Serialize(ms, info);
+                data = ms.ToArray();
+                client.Send(data, data.Length, info.remoteEP);
+            }
+        }
+
+        private void SendMSG(string msg)
+        {
+            Info inf = new Info();
+            inf.MSG = msg;
+            inf.Data = null;
+            inf.DBTestData = null;
+            inf.DBUserData = null;
+            inf.remoteEP = remoteEP;
+            SenderData(inf);
+        }
+
 
 
         //
@@ -839,10 +1005,18 @@ namespace TestServer
         {
             if (n == 1)
             {
+                SendMSG("EXIT");
                 Application.Exit();
             }
+
+            Thread receiver = new Thread(Listener);
+            receiver.IsBackground = true;
+            receiver.Start();
         }
 
-        
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SendMSG("EXIT");
+        }
     }
 }
